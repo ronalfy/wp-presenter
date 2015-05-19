@@ -1,0 +1,22 @@
+$width: 65em;
+
+body {
+  background: url(images/balloon.jpg) no-repeat fixed center;
+  background-size: cover;
+
+}
+.site {
+  @include container($width);
+  @include rem(padding,30px 0);
+}
+
+.site-header {
+
+  .site-branding {
+    @include span(6 of 12 alpha);
+  }
+
+  .main-navigation {
+    @include span(6 of 12 omega);
+  }
+}
