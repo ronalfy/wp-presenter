@@ -13,6 +13,6 @@
 
 
 <?php wp_footer(); ?>
-<?php reveal_initialize_script();?>
+<?php wp_presenter_initialize_script();?>
 </body>
 </html>

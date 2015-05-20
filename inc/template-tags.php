@@ -7,7 +7,7 @@
  * @package trishasalas
  */
 
-function reveal_get_slides() {
+function wp_presenter_get_slides() {
 	$slides = get_post_meta( get_the_ID(), 'slides', true );
 	if ( empty( $slides ) ) {
 		return array();
@@ -15,7 +15,7 @@ function reveal_get_slides() {
 	return (array) $slides;
 }
 
-function reveal_section_attr( $slide ) {
+function wp_presenter_section_attr( $slide ) {
 	if ( empty( $slide ) ) {
 		return '';
 	}
@@ -33,7 +33,7 @@ function reveal_section_attr( $slide ) {
 	return '';
 }
 
-function ds_reveal_homepage_slides( &$query ) {
+function wp_presenter_homepage_slides( &$query ) {
 	if ( $query->is_main_query() && $query->is_home() ) {
 		$query->set( 'post_type', 'slide' );
 		$query->set( 'posts_per_page', -1 );
@@ -49,7 +49,7 @@ function ds_reveal_homepage_slides( &$query ) {
  * @param  string $content Content.
  * @return string
  */
-function reveal_process_html_field( $content ) {
+function wp_presenter_process_html_field( $content ) {
 	$content = apply_filters( 'the_content', $content );
 	return str_replace( ']]>', ']]&gt;', $content );
 }
