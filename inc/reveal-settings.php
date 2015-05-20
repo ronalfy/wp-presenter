@@ -5,12 +5,17 @@ function wp_presenter_initialize_script() {
 	$transition_speed   = get_theme_mod( 'transition_speed' );
 	$bkg_transition     = get_theme_mod( 'bkg_transition' );
 	$view_distance      = get_theme_mod( 'view_distance' );
+	$fragments          = get_theme_mod( 'fragments' );
 	?>
 
 	<script>
 		// Full list of configuration options available here:
 		// https://github.com/hakimel/reveal.js#configuration
 		Reveal.initialize({
+			history:                <?php if( '' == get_theme_mod( 'history' ) ) { echo 'false'; } else { echo 'true'; } ?>,
+			fragments:              <?php if( '' == get_theme_mod( 'fragments' ) ) { echo 'true'; } else { echo $fragments; } ?>,
+			embedded:               <?php if( '' == get_theme_mod( 'embedded' ) ) { echo 'false'; } else { echo 'true'; } ?>,
+			help:                   <?php if( '' == get_theme_mod( 'help' ) ) { echo 'true'; } else { echo 'false'; } ?>,
 			controls:               <?php if( '' == esc_attr( get_theme_mod( 'controls_right_corner' ) ) ) { echo 'false'; } else { echo 'true'; } ?>,
 			progress:               <?php if( '' == get_theme_mod( 'progress' ) ) { echo 'false'; } else { echo 'true'; } ?>,
 			slideNumber:            <?php if( '' == get_theme_mod( 'number' ) ) { echo 'false'; } else { echo 'true'; } ?>,

@@ -26,14 +26,12 @@ function wp_presenter_scripts() {
 	wp_enqueue_style( 'wp-presenter-theme', get_template_directory_uri() . '/assets/reveal/css/theme/' . $theme . '.css', array(), '', false );
 	wp_enqueue_style( 'wp-presenter-zenburn', get_template_directory_uri() . '/assets/reveal/lib/css/zenburn.css', array(), '');
 	wp_enqueue_script( 'wp-presenter-head-js', get_template_directory_uri() . '/assets/reveal/lib/js/head.min.js', array(), '', true );
-	wp_enqueue_script( 'wp-presenter-core-js', get_template_directory_uri().'/assets/reveal/js/reveal.js', array(), '', true );
+	wp_enqueue_script( 'wp-presenter-core-js', get_template_directory_uri(). '/assets/reveal/js/reveal.js', array(), '', true );
 }
 	add_action( 'wp_enqueue_scripts', 'wp_presenter_scripts' );
 
+	wp_enqueue_script( 'html5shiv', '//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.js', array(), '3.7.2', false );
 
-
-
-wp_enqueue_script( 'html5shiv', '//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.js', array(), '3.7.2', false );
 add_filter( 'script_loader_tag', function( $tag, $handle ) {
 	if ( $handle === 'html5shiv' ) {
 		$tag = "<!--[if lt IE 9]>$tag<![endif]-->";
