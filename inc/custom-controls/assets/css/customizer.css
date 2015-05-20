@@ -441,9 +441,14 @@ body.IE7 .Switch.Round {
 #customize-theme-controls .accordion-section-content {
     padding: 10px 30px 10px 20px!important;
 }
+#customize-control-embedded > .hint:after,
+#customize-control-embedded > [data-hint]:after {
+    top: -70px !important;
+}
 
-#customize-control-fragments .hint:after, #customize-control-fragments > [data-hint]:after {
-    top: -100px !important;
+#customize-control-help > .hint:after,
+#customize-control-help > [data-hint]:after {
+    top: -50px;
 }
 
 #input_header_typography img {

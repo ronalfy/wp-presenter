@@ -11,44 +11,39 @@ function ds_panels_sections( $wp_customize ) {
  */
 	$wp_customize->add_section( 'settings', array (
 			'title'             => __( 'Global Settings', 'ds' ),
-			'priority'          => 10,
+			'priority'          => 20,
 		) );
+
+	$wp_customize->add_section( 'style', array(
+		'title'       => __( 'Style', 'ds' ),
+		'priority'    => 30,
+	) );
 
 	$wp_customize->add_section( 'visual_settings', array (
 		'title'             => __( 'Visual Settings', 'ds' ),
-		'priority'          => 20,
+		'priority'          => 40,
 	) );
 
 	$wp_customize->add_section( 'navigation', array(
 		'title'       => __( 'Navigation', 'ds' ),
-		'priority'    => 30,
+		'priority'    => 50,
 	) );
 
 	$wp_customize->add_section( 'transitions', array(
 		'title'       => __( 'Transitions', 'ds' ),
-		'priority'    => 40,
+		'priority'    => 60,
 	) );
 
 	$wp_customize->add_section( 'autoslide', array (
 		'title'             => __( 'Auto Play', 'ds' ),
 		'description'       => '',
-		'priority'          => 50,
+		'priority'          => 70,
 	) );
 
-	$wp_customize->add_section( 'style', array(
-		'title'       => __( 'Style', 'ds' ),
-		'priority'    => 60,
-	) );
-
-	$wp_customize->add_section( 'style', array (
-			'title'          => __( 'Style', 'ds' ),
-			'priority'       => 70,
+	$wp_customize->add_section( 'mobile', array (
+			'title'          => __( 'Mobile', 'ds' ),
+			'priority'       => 80,
 		) );
-
-	$wp_customize->add_section( 'parallax', array(
-		'title'             => __( 'Parallax', 'ds' ),
-		'priority'          => 80,
-	) );
 
 }
 add_action( 'customize_register', 'ds_panels_sections' );
@@ -69,7 +64,7 @@ function ds_fields( $fields ) {
 		'help'        => __( 'Make the first slide loop back to the first.', 'ds' ),
 		'section'     => 'settings',
 		'default'     => 0,
-		'priority'    => 20,
+		'priority'    => 10,
 	);
 
 	$fields[] = array(
@@ -80,205 +75,17 @@ function ds_fields( $fields ) {
 		'help'        => __( 'Make content flow right to left.', 'ds' ),
 		'section'     => 'settings',
 		'default'     => 0,
-		'priority'    => 30,
-	);
-
-	// Global Visual Settings
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'progress',
-		'label'       => __( 'Progress Bar', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Display a presentation progress bar', 'ds' ),
-		'section'     => 'visual_settings',
-		'default'     => 1,
-		'priority'    => 30,
+		'priority'    => 20,
 	);
 
 	$fields[] = array(
 		'type'        => 'toggle',
-		'setting'     => 'slide_number',
-		'label'       => __( 'Slide Number', 'ds' ),
+		'setting'     => 'history',
+		'label'       => __( 'Push History', 'ds' ),
 		'description' => __( '', 'ds' ),
-		'help'        => __( 'Display the page number of the current slide.', 'ds' ),
-		'section'     => 'visual_settings',
+		'help'        => __( 'Push each slide change to the browser history.', 'ds' ),
+		'section'     => 'settings',
 		'default'     => 0,
-		'priority'    => 30,
-	);
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'overview',
-		'label'       => __( 'Slideshow Overview', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Enable the slide overview mode', 'ds' ),
-		'section'     => 'visual_settings',
-		'default'     => 1,
-		'priority'    => 30,
-	);
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'center',
-		'label'       => __( 'Center Slides Vertically', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Vertical centering of slides.', 'ds' ),
-		'section'     => 'visual_settings',
-		'default'     => 1,
-		'priority'    => 30,
-	);
-
-	// Navigation Section
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'controls_right_corner',
-		'label'       => __( 'Display Controls?', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Display controls in the bottom right corner', 'ds' ),
-		'section'     => 'navigation',
-		'default'     => 1,
-		'priority'    => 10,
-	);
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'touch',
-		'label'       => __( 'Enable Touch Navigation', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Enables touch navigation on devices with touch input.', 'ds' ),
-		'section'     => 'navigation',
-		'default'     => 1,
-		'priority'    => 30,
-	);
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'keyboard_shortcuts',
-		'label'       => __( 'Keyboard Shortcuts', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Enable keyboard shortcuts for navigation', 'ds' ),
-		'section'     => 'navigation',
-		'default'     => 1,
-		'priority'    => 30,
-	);
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'mousewheel_navigation',
-		'label'       => __( 'Mouse Wheel Navigation', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Enable slide navigation via mouse wheel.', 'ds' ),
-		'section'     => 'navigation',
-		'default'     => 1,
-		'priority'    => 30,
-	);
-
-	// Transitions
-
-	$fields[] = array(
-		'type'     => 'radio-image',
-		'settings' => 'transitions',
-		'label'    => __( 'Transition Style', 'ds' ),
-		'help'     => __( '1: none, &nbsp;2: fade, &nbsp;3: slide, &nbsp;4: convex, &nbsp;5: concave, &nbsp;6: zoom' ),
-		'section'  => 'transitions',
-		'default'  => 'slide',
-		'priority' => 10,
-		'choices'  => array(
-			'none'      => trailingslashit( KIRKI_URL ) . 'assets/images/none.png',
-			'fade'      => trailingslashit( KIRKI_URL ) . 'assets/images/fade.png',
-			'slide'     => trailingslashit( KIRKI_URL ) . 'assets/images/slide.png',
-			'convex'    => trailingslashit( KIRKI_URL ) . 'assets/images/convex.png',
-			'concave'   => trailingslashit( KIRKI_URL ) . 'assets/images/concave.png',
-			'zoom'      => trailingslashit( KIRKI_URL ) . 'assets/images/zoom.png',
-		),
-	);
-
-	$fields[] = array(
-		'type'        => 'select',
-		'setting'     => 'transition_speed',
-		'label'       => __( 'Transition Speed', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( '', 'ds' ),
-		'section'     => 'transitions',
-		'default'     => 'slow',
-		'priority'    => 10,
-		'choices'     => array(
-			'fast' => __( 'Fast', 'ds' ),
-			'slow' => __( 'Slow', 'ds' ),
-		),
-	);
-
-	$fields[] = array(
-		'type'     => 'radio-image',
-		'settings' => 'background_transitions',
-		'label'    => __( 'Background Transition', 'ds' ),
-		'help'     => __( 'Background transitions apply when navigating to or from a slide that has a background image or color.' ),
-		'section'  => 'transitions',
-		'default'  => 'slide',
-		'priority' => 10,
-		'choices'  => array(
-			'none'      => trailingslashit( KIRKI_URL ) . 'assets/images/none.png',
-			'fade'      => trailingslashit( KIRKI_URL ) . 'assets/images/fade.png',
-			'slide'     => trailingslashit( KIRKI_URL ) . 'assets/images/slide.png',
-			'convex'    => trailingslashit( KIRKI_URL ) . 'assets/images/convex.png',
-			'concave'   => trailingslashit( KIRKI_URL ) . 'assets/images/concave.png',
-			'zoom'      => trailingslashit( KIRKI_URL ) . 'assets/images/zoom.png',
-		),
-	);
-
-	$fields[] = array(
-		'type'        => 'select',
-		'setting'     => 'view_distance',
-		'label'       => __( 'View Distance', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Number of slides away from the current slide that are visible.', 'ds' ),
-		'section'     => 'transitions',
-		'default'     => '3',
-		'priority'    => 10,
-		'choices'     => array(
-			'1' => __( '1', 'ds' ),
-			'2' => __( '2', 'ds' ),
-			'3' => __( '3', 'ds' ),
-			'4' => __( '4', 'ds' ),
-			'5' => __( '5', 'ds' ),
-
-		),
-	);
-
-	// Auto Slide
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'autoslide',
-		'label'       => __( 'Auto-Slide', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Automatically proceed to the next slide.', 'ds' ),
-		'section'     => 'autoslide',
-		'default'     => 0,
-		'priority'    => 30,
-	);
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'stop_autoslide',
-		'label'       => __( 'Auto-Slide Stoppable', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Stop auto-sliding after user input.', 'ds' ),
-		'section'     => 'autoslide',
-		'default'     => 1,
-		'priority'    => 30,
-	);
-
-	$fields[] = array(
-		'type'        => 'text',
-		'setting'     => 'autoslide_milliseconds',
-		'label'       => __( 'Auto-slide Delay', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Number of milliseconds between automatically proceeding to the next slide.', 'ds' ),
-		'section'     => 'autoslide',
-		'default'     => 500,
 		'priority'    => 30,
 	);
 
@@ -287,7 +94,7 @@ function ds_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'palette',
 		'setting'     => 'select_theme',
-		'label'       => __( 'Color', 'ds' ),
+		'label'       => __( 'Theme', 'ds' ),
 		'description' => __( '', 'ds' ),
 		'help'        => __( 'The colors for the theme of your slideshow.', 'ds' ),
 		'section'     => 'style',
@@ -412,48 +219,263 @@ function ds_fields( $fields ) {
 		),
 	);
 
-	// Parallax
+	// Global Visual Settings
 
 	$fields[] = array(
-		'type'        => 'image',
-		'setting'     => 'parallax_bkg',
-		'label'       => __( 'Parallax background image', 'ds' ),
-		'section'     => 'parallax',
-		'default'     => '',
+		'type'        => 'toggle',
+		'setting'     => 'progress',
+		'label'       => __( 'Progress Bar', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Display a presentation progress bar', 'ds' ),
+		'section'     => 'visual_settings',
+		'default'     => 1,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'slide_number',
+		'label'       => __( 'Slide Number', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Display the page number of the current slide.', 'ds' ),
+		'section'     => 'visual_settings',
+		'default'     => 0,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'overview',
+		'label'       => __( 'Slideshow Overview', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Enable the slide overview mode', 'ds' ),
+		'section'     => 'visual_settings',
+		'default'     => 1,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'center',
+		'label'       => __( 'Center Slides Vertically', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Vertical centering of slides.', 'ds' ),
+		'section'     => 'visual_settings',
+		'default'     => 1,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'fragments',
+		'label'       => __( 'Fragments', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Turns fragments on and off globally.', 'ds' ),
+		'section'     => 'visual_settings',
+		'default'     => 1,
+		'priority'    => 40,
+	);
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'embedded',
+		'label'       => __( 'Embedded Mode', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Flags if the presentation is running in an embedded mode, i.e. contained within a limited portion of the screen', 'ds' ),
+		'section'     => 'visual_settings',
+		'default'     => 0,
+		'priority'    => 50,
+	);
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'help',
+		'label'       => __( 'Help', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Flags if we should show a help overlay when the questionmark key is pressed', 'ds' ),
+		'section'     => 'visual_settings',
+		'default'     => 1,
+		'priority'    => 60,
+	);
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'preview_links',
+		'label'       => __( 'Preview Links', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Opens links in an iframe preview overlay.', 'ds' ),
+		'section'     => 'visual_settings',
+		'default'     => 1,
+		'priority'    => 60,
+	);
+
+	// Navigation Section
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'controls_right_corner',
+		'label'       => __( 'Display Controls?', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Display controls in the bottom right corner', 'ds' ),
+		'section'     => 'navigation',
+		'default'     => 1,
 		'priority'    => 10,
 	);
 
 	$fields[] = array(
-		'type'        => 'text',
-		'setting'     => 'parallax_background_size',
-		'label'       => __( 'Parallax Background Size', 'ds' ),
-		'description' => __( 'CSS syntax, e.g. "2100px 900px."', 'ds' ),
-		'section'     => 'parallax',
-		'default'     => '',
-		'priority'    => 20,
-	);
-
-	$fields[] = array(
-		'type'        => 'text',
-		'setting'     => 'parallax_background_change_horizontal',
-		'label'       => __( 'Horizontal Change', 'ds' ),
-		'description' => __( 'Horizontal amount to move parallax background on slide change', 'ds' ),
-		'help'        => __( ' Number, e.g. 100', 'ds' ),
-		'section'     => 'parallax',
-		'default'     => '',
+		'type'        => 'toggle',
+		'setting'     => 'keyboard_shortcuts',
+		'label'       => __( 'Keyboard Shortcuts', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Enable keyboard shortcuts for navigation', 'ds' ),
+		'section'     => 'navigation',
+		'default'     => 1,
 		'priority'    => 30,
 	);
 
 	$fields[] = array(
-		'type'        => 'text',
-		'setting'     => 'parallax_background_change_vertical',
-		'label'       => __( 'Vertical Change', 'ds' ),
-		'description' => __( 'Vertical amount to move parallax background on slide change', 'ds' ),
-		'help'        => __( ' Number, e.g. 100', 'ds' ),
-		'section'     => 'parallax',
-		'default'     => '',
+		'type'        => 'toggle',
+		'setting'     => 'mousewheel_navigation',
+		'label'       => __( 'Mouse Wheel Navigation', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Enable slide navigation via mouse wheel.', 'ds' ),
+		'section'     => 'navigation',
+		'default'     => 1,
 		'priority'    => 30,
 	);
+
+	// Transitions
+
+	$fields[] = array(
+		'type'     => 'radio-image',
+		'settings' => 'transitions',
+		'label'    => __( 'Transition Style', 'ds' ),
+		'help'     => __( '1: none, &nbsp;2: fade, &nbsp;3: slide, &nbsp;4: convex, &nbsp;5: concave, &nbsp;6: zoom' ),
+		'section'  => 'transitions',
+		'default'  => 'slide',
+		'priority' => 10,
+		'choices'  => array(
+			'none'      => trailingslashit( KIRKI_URL ) . 'assets/images/none.png',
+			'fade'      => trailingslashit( KIRKI_URL ) . 'assets/images/fade.png',
+			'slide'     => trailingslashit( KIRKI_URL ) . 'assets/images/slide.png',
+			'convex'    => trailingslashit( KIRKI_URL ) . 'assets/images/convex.png',
+			'concave'   => trailingslashit( KIRKI_URL ) . 'assets/images/concave.png',
+			'zoom'      => trailingslashit( KIRKI_URL ) . 'assets/images/zoom.png',
+		),
+	);
+
+	$fields[] = array(
+		'type'        => 'select',
+		'setting'     => 'transition_speed',
+		'label'       => __( 'Transition Speed', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( '', 'ds' ),
+		'section'     => 'transitions',
+		'default'     => 'slow',
+		'priority'    => 10,
+		'choices'     => array(
+			'fast' => __( 'Fast', 'ds' ),
+			'slow' => __( 'Slow', 'ds' ),
+		),
+	);
+
+	$fields[] = array(
+		'type'     => 'radio-image',
+		'settings' => 'background_transitions',
+		'label'    => __( 'Background Transition', 'ds' ),
+		'help'     => __( 'Background transitions apply when navigating to or from a slide that has a background image or color.' ),
+		'section'  => 'transitions',
+		'default'  => 'slide',
+		'priority' => 10,
+		'choices'  => array(
+			'none'      => trailingslashit( KIRKI_URL ) . 'assets/images/none.png',
+			'fade'      => trailingslashit( KIRKI_URL ) . 'assets/images/fade.png',
+			'slide'     => trailingslashit( KIRKI_URL ) . 'assets/images/slide.png',
+			'convex'    => trailingslashit( KIRKI_URL ) . 'assets/images/convex.png',
+			'concave'   => trailingslashit( KIRKI_URL ) . 'assets/images/concave.png',
+			'zoom'      => trailingslashit( KIRKI_URL ) . 'assets/images/zoom.png',
+		),
+	);
+
+	$fields[] = array(
+		'type'        => 'select',
+		'setting'     => 'view_distance',
+		'label'       => __( 'View Distance', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Number of slides away from the current slide that are visible.', 'ds' ),
+		'section'     => 'transitions',
+		'default'     => '3',
+		'priority'    => 10,
+		'choices'     => array(
+			'1' => __( '1', 'ds' ),
+			'2' => __( '2', 'ds' ),
+			'3' => __( '3', 'ds' ),
+			'4' => __( '4', 'ds' ),
+			'5' => __( '5', 'ds' ),
+
+		),
+	);
+
+	// Auto Slide
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'autoslide',
+		'label'       => __( 'Auto-Slide', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Automatically proceed to the next slide.', 'ds' ),
+		'section'     => 'autoslide',
+		'default'     => 0,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'stop_autoslide',
+		'label'       => __( 'Auto-Slide Stoppable', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Stop auto-sliding after user input.', 'ds' ),
+		'section'     => 'autoslide',
+		'default'     => 1,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'number',
+		'setting'     => 'autoslide_milliseconds',
+		'label'       => __( 'Auto-slide Delay', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Number of milliseconds between automatically proceeding to the next slide.', 'ds' ),
+		'section'     => 'autoslide',
+		'default'     => 0,
+		'priority'    => 30,
+	);
+
+	// Mobile
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'touch',
+		'label'       => __( 'Enable Touch Navigation', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Enables touch navigation on devices with touch input.', 'ds' ),
+		'section'     => 'mobile',
+		'default'     => 1,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'toggle',
+		'setting'     => 'hide_address_bar',
+		'label'       => __( 'Hide Address Bar', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Hides the address bar on mobile devices.', 'ds' ),
+		'section'     => 'mobile',
+		'default'     => 1,
+		'priority'    => 30,
+	);
+
+
 
 	return $fields;
 
