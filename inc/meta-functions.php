@@ -38,3 +38,13 @@ function remove_admin_bar_links() {
     $wp_admin_bar->remove_menu('my-account');       // Remove the user details tab
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
+
+// Remove auto generated feed links
+function wp_presenter_remove_feeds() {
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'feed_links', 2 );
+}
+add_action( 'after_setup_theme', 'wp_presenter_remove_feeds' );
+
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
