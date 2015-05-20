@@ -25,50 +25,11 @@ function wp_presenter_metaboxes( array $meta_boxes ) {
 		)
 	);
 
-	$vertical_slides_fields = array(
-		array(
-			'id'    => 'Slide Title',
-			'name'  => 'Slide Title',
-			'type'  => 'text'
-		),
-		array(
-			'id' => 'vertical_content_area',
-			'name' => 'WYSIWYG field',
-			'type' => 'wysiwyg',
-			'options' =>
-				array(
-					'editor_height' => '100'
-				),
-			'repeatable' => true,
-			'sortable' => true
-		),
-	);
-
-	$vertical_slide_group = $vertical_slides_fields;
-	foreach ($vertical_slide_group as &$field ) {
-		$field['id'] = str_replace( 'field', 'gfield', $field['id'] );
-	}
-	$meta_boxes[] = array(
-		'title' => 'Vertical Slides',
-		'pages' => 'slide',
-		'fields' => array(
-			array(
-				'id' => 'vertical_slides_group',
-				'name' => 'Add as many vertical slides as you want.',
-				'type' => 'group',
-				'repeatable' => true,
-				'sortable' => true,
-				'fields' =>	$vertical_slide_group,
-				'desc' => 'The content area fields work the same way here as they do in the main slide area.'
-			)
-		)
-	);
-
 	$groups_and_cols = array(
 
 		array(
 			'id' => 'data_attribute_transition',
-			'name' => 'Data Attribute',
+			'name' => '',
 			'type' => 'group',
 			'cols' => 6,
 			'fields' => array(
@@ -82,12 +43,12 @@ function wp_presenter_metaboxes( array $meta_boxes ) {
 
 		array(
 			'id' => 'data_attribute_bkg_color',
-			'name' => 'Data Attribute',
+			'name' => '',
 			'type' => 'group',
 			'cols' => 6,
 			'fields' => array(
 				array(
-					'id' => 'gac-2',
+					'id' => 'data_bkg_color',
 					'name' => 'Background Color',
 					'type' => 'colorpicker',
 				),
@@ -96,25 +57,25 @@ function wp_presenter_metaboxes( array $meta_boxes ) {
 
 		array(
 			'id' => 'data_attribute_fullscreen_bkg',
-			'name' => 'Data Attribute',
+			'name' => '',
 			'type' => 'group',
 			'cols' => 4,
 			'fields' => array(
 				array(
-					'id' => 'gac-2',
+					'id' => 'data_bkg_image',
 					'name' => 'Fullscreen Background Image',
 					'type' => 'image',
 				),
 			)
 		),
 		array(
-			'id' => 'gac-4',
-			'name' => 'Data Attribute',
+			'id' => 'data_bkg_row_2',
+			'name' => '',
 			'type' => 'group',
 			'cols' => 4,
 			'fields' => array(
 				array(
-					'id' => 'gac-2',
+					'id' => 'data_bkg_image_tiled',
 					'name' => 'Tiled Background Image',
 					'type' => 'image',
 				),
@@ -122,15 +83,15 @@ function wp_presenter_metaboxes( array $meta_boxes ) {
 		),
 
 		array(
-			'id' => 'gac-5',
-			'name' => 'Data Attribute',
+			'id' => 'data_bkg_video',
+			'name' => '',
 			'type' => 'group',
 			'cols' => 4,
 			'fields' => array(
 				array(
-					'id' => 'tiled_bkg',
+					'id' => 'bkg_video',
 					'name' => 'Video',
-					'type' => 'image',
+					'type' => 'url',
 				),
 			)
 		),
@@ -146,7 +107,7 @@ function wp_presenter_metaboxes( array $meta_boxes ) {
 		'pages' => 'slide',
 		'fields' => array(
 			array(
-				'id' => 'main_content',
+				'id' => 'speaker_notes',
 				'name' => 'Use this area for presentation notes. The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven\'t written any notes. Press the \'s\' key on your keyboard to open the notes window.',
 				'type' => 'textarea',
 			),

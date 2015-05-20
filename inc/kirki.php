@@ -34,12 +34,6 @@ function ds_panels_sections( $wp_customize ) {
 		'priority'    => 60,
 	) );
 
-	$wp_customize->add_section( 'autoslide', array (
-		'title'             => __( 'Auto Play', 'ds' ),
-		'description'       => '',
-		'priority'          => 70,
-	) );
-
 	$wp_customize->add_section( 'mobile', array (
 			'title'          => __( 'Mobile', 'ds' ),
 			'priority'       => 80,
@@ -414,41 +408,6 @@ function ds_fields( $fields ) {
 			'5' => __( '5', 'ds' ),
 
 		),
-	);
-
-	// Auto Slide
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'autoslide',
-		'label'       => __( 'Auto-Slide', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Automatically proceed to the next slide.', 'ds' ),
-		'section'     => 'autoslide',
-		'default'     => 0,
-		'priority'    => 30,
-	);
-
-	$fields[] = array(
-		'type'        => 'toggle',
-		'setting'     => 'stop_autoslide',
-		'label'       => __( 'Auto-Slide Stoppable', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Stop auto-sliding after user input.', 'ds' ),
-		'section'     => 'autoslide',
-		'default'     => 1,
-		'priority'    => 30,
-	);
-
-	$fields[] = array(
-		'type'        => 'number',
-		'setting'     => 'autoslide_milliseconds',
-		'label'       => __( 'Auto-slide Delay', 'ds' ),
-		'description' => __( '', 'ds' ),
-		'help'        => __( 'Number of milliseconds between automatically proceeding to the next slide.', 'ds' ),
-		'section'     => 'autoslide',
-		'default'     => 0,
-		'priority'    => 30,
 	);
 
 	// Mobile

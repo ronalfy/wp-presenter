@@ -21,9 +21,10 @@ add_action( 'after_setup_theme', 'wp_presenter_setup' );
 
 
 function wp_presenter_scripts() {
+	wp_enqueue_style( 'wp-presenter-style', get_stylesheet_uri() );
 	$theme = get_theme_mod( 'select_theme');
 	wp_enqueue_style( 'wp-presenter-core', get_template_directory_uri() .'/assets/reveal/css/reveal.css', array(), '', false );
-	wp_enqueue_style( 'wp-presenter-theme', get_template_directory_uri() . '/assets/reveal/css/theme/' . $theme . '.css', array(), '', false );
+	wp_enqueue_style( 'wp-presenter-theme', get_template_directory_uri() . '/assets/reveal/css/theme/' . $theme . '.css' );
 	wp_enqueue_style( 'wp-presenter-zenburn', get_template_directory_uri() . '/assets/reveal/lib/css/zenburn.css', array(), '');
 	wp_enqueue_script( 'wp-presenter-head-js', get_template_directory_uri() . '/assets/reveal/lib/js/head.min.js', array(), '', true );
 	wp_enqueue_script( 'wp-presenter-core-js', get_template_directory_uri(). '/assets/reveal/js/reveal.js', array(), '', true );

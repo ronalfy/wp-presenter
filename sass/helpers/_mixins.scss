@@ -12,13 +12,13 @@
 }
 
 // Clearfix
-@mixin clearfix() {
+@mixin cf() {
 	content: "";
 	display: table;
 }
 
 // Clear after (not all clearfix need this also)
-@mixin clearfix-after() {
+@mixin cf-after() {
 	clear: both;
 }
 

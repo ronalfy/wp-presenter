@@ -2,6 +2,7 @@
 
 function remove_dashboard_widgets(){
     remove_meta_box('dashboard_right_now', 'dashboard', 'normal');   // Right Now
+	remove_meta_box('dashboard_activity', 'dashboard', 'normal');   // Right Now
     remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // Recent Comments
     remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');  // Incoming Links
     remove_meta_box('dashboard_plugins', 'dashboard', 'normal');   // Plugins
@@ -29,7 +30,6 @@ function remove_admin_bar_links() {
     $wp_admin_bar->remove_menu('documentation');    // Remove the WordPress documentation link
     $wp_admin_bar->remove_menu('support-forums');   // Remove the support forums link
     $wp_admin_bar->remove_menu('feedback');         // Remove the feedback link
-    //$wp_admin_bar->remove_menu('site-name');        // Remove the site name menu
     $wp_admin_bar->remove_menu('view-site');        // Remove the view site link
     $wp_admin_bar->remove_menu('updates');          // Remove the updates link
     $wp_admin_bar->remove_menu('comments');         // Remove the comments link
@@ -48,3 +48,27 @@ add_action( 'after_setup_theme', 'wp_presenter_remove_feeds' );
 
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+function reveal_admin_menu() {
+	// You can add `remove_action( 'admin_menu', 'reveal_admin_menu' );` to
+	// your child theme if you don't want these removed
+	remove_menu_page( 'edit.php' );
+	remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
+	remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
+	remove_menu_page( 'edit-comments.php' );
+}
+function reveal_remove_admin_bar_links() {
+	// You can add `remove_action( 'wp_before_admin_bar_render', 'reveal_remove_admin_bar_links' );`
+	// to your child theme if you don't want these removed
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_node( 'new-post' );
+}
+
+function reveal_flush_rewrites() {
+	delete_option( 'rewrite_rules' );
+}
+
+add_action( 'wp_before_admin_bar_render', 'reveal_remove_admin_bar_links' );
+add_filter( 'show_admin_bar', '__return_false' );
+add_action( 'after_switch_theme', 'reveal_flush_rewrites' );
+add_action( 'switch_theme', 'reveal_flush_rewrites' );
