@@ -1,6 +1,6 @@
 <?php
 /**
- * Adds the individual panel, sections, settings, and controls to the theme customizer
+ *
  *
  */
 function ds_customizer_register( $wp_customize ) {
