@@ -1,4 +1,10 @@
-<?php get_header() ?>
+<?php
+/**
+ * The main page for displaying the slideshow.
+ *
+ * @package WP Presenter
+ */
+get_header();?>
 
 	<?php $slides = get_posts( 'post_type=slide&post_status=publish&posts_per_page=-1&orderby=date&order=ASC' );?>
 
@@ -35,4 +41,5 @@
 		</section><!-- This CLOSING tag will only exist if there are vertical slides that need to be nested with the main slide -->
 		<?php endif ?>
 	<?php endforeach ;?>
+
 <?php get_footer(); ?>

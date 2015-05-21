@@ -1,3 +1,10 @@
+<?php
+/**
+ * The template for displaying the header.
+ *
+ * @package WP Presenter
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
