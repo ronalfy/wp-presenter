@@ -69,8 +69,11 @@ add_action( 'pre_get_posts', 'reveal_homepage_slides' );
  * Template Tags
  */
 function reveal_get_slides() {
-	$vslides = get_post_meta( get_the_ID(), 'add_a_vertical_slide', true );
-
+	$slides = get_post_meta( get_the_ID(), 'add_a_vertical_slide', true );
+	if ( empty( $slides ) ) {
+		return array();
+	}
+	return (array) $slides;
 }
 
 /**
