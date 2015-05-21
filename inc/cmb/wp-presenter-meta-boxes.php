@@ -5,25 +5,125 @@
  * @param  array $meta_boxes
  * @return array
  */
+
 function wp_presenter_metaboxes( array $meta_boxes ) {
 
+	// Toggle Content Area
+
+//	$meta_boxes[] = array(
+//		'title' => 'Slide Layout',
+//		'pages' => 'slide',
+//		'fields' => array(
+//			array(
+//				'id'      => 'slide_layout',
+//				'name'    => 'Select Slide Layout',
+//				'type'    => 'select',
+//				'options' => array(
+//					'select_layout' => 'Select a Layout',
+//					'single-column-content' => 'One Column',
+//					'two-column-content' => 'Two Columns',
+//				)
+//			),
+//		)
+//	);
+
+	// Content Area
 	$meta_boxes[] = array(
-		'title' => 'Main Content Area',
+		'title' => 'Single Column Content',
 		'pages' => 'slide',
 		'fields' => array(
 			array(
-				'id' => 'main_content',
-				'name' => 'Use a single content area for a full screen layout. Add two content areas for a two column layout.',
+				'id' => 'content',
+				'name' => '',
 				'type' => 'wysiwyg',
-				'repeatable'     => true,
-				'sortable' => true,
-				'repeatable_max' => 2,
 				'options' => array(
 					'editor_height' => '100'
 				)
 			),
 		)
 	);
+
+	$meta_boxes[] = array(
+		'title' => 'Two Column Content',
+		'pages' => 'slide',
+		'type' => 'group',
+		'fields' => array(
+			array(
+				'id' => 'first_column_content',
+				'name' => 'Content - First Column',
+				'type' => 'wysiwyg',
+				'cols' => 6
+			),
+			array(
+				'id' => 'second_column_content',
+				'name' => 'Content - Second Column',
+				'type' => 'wysiwyg',
+				'cols' => 6
+			),
+
+		),
+	);
+
+	// Toggle Vertical Slides
+
+//	$meta_boxes[] = array(
+//		'title' => 'Vertical Slides',
+//		'pages' => 'slide',
+//		'fields' => array(
+//			array(
+//				'id'   => 'vertical_slide',
+//				'name' => 'Add a Vertical Slide',
+//				'type' => 'checkbox',
+//			),
+//		)
+//	);
+
+
+	// Vertical Slides
+	$vertical_slides_group = array(
+
+		array(
+			'id' => 'vertical_slide_content',
+			'name' => 'Vertical Slides',
+			'type' => 'group',
+			'repeatable' => true,
+			'sortable' => true,
+			'fields' => array(
+				array(
+					'id' => 'title',
+					'name' => 'Title',
+					'type' => 'text',
+				),
+				array(
+					'id' => 'content',
+					'name' => 'Content',
+					'type' => 'wysiwyg',
+				),
+			)
+		),
+	);
+
+	$meta_boxes[] = array(
+		'title' => 'Vertical Slide Content',
+		'pages' => 'slide',
+		'fields' => $vertical_slides_group
+	);
+
+	// Toggle Data Attributes
+
+//	$meta_boxes[] = array(
+//		'title' => 'Add Data Attributes',
+//		'pages' => 'slide',
+//		'fields' => array(
+//			array(
+//				'id'   => 'data_attributes_toggle',
+//				'name' => 'Add Data Attributes',
+//				'type' => 'checkbox',
+//			),
+//		)
+//	);
+
+	// Data Attributes
 
 	$groups_and_cols = array(
 
@@ -101,6 +201,22 @@ function wp_presenter_metaboxes( array $meta_boxes ) {
 		'pages' => 'slide',
 		'fields' => $groups_and_cols
 	);
+
+	// Toggle Speaker Notes
+
+//	$meta_boxes[] = array(
+//		'title' => 'Add Speaker Notes',
+//		'pages' => 'slide',
+//		'fields' => array(
+//			array(
+//				'id'   => 'speaker_notes_toggle',
+//				'name' => 'Add Speaker Notes',
+//				'type' => 'checkbox',
+//			),
+//		)
+//	);
+
+	// Speaker Notes
 
 	$meta_boxes[] = array(
 		'title' => 'Speaker Notes',

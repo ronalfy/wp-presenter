@@ -39,16 +39,6 @@ function remove_admin_bar_links() {
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 
-// Remove auto generated feed links
-function wp_presenter_remove_feeds() {
-	remove_action( 'wp_head', 'feed_links_extra', 3 );
-	remove_action( 'wp_head', 'feed_links', 2 );
-}
-add_action( 'after_setup_theme', 'wp_presenter_remove_feeds' );
-
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-
 function reveal_admin_menu() {
 	// You can add `remove_action( 'admin_menu', 'reveal_admin_menu' );` to
 	// your child theme if you don't want these removed
@@ -72,3 +62,6 @@ add_action( 'wp_before_admin_bar_render', 'reveal_remove_admin_bar_links' );
 add_filter( 'show_admin_bar', '__return_false' );
 add_action( 'after_switch_theme', 'reveal_flush_rewrites' );
 add_action( 'switch_theme', 'reveal_flush_rewrites' );
+
+//define( 'ACF_LITE' , true );
+//include_once('advanced-custom-fields/acf.php' );

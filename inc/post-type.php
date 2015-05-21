@@ -22,7 +22,7 @@ function register_cpt_slide() {
         'labels' => $labels,
         'hierarchical' => false,
 
-        'supports' => array( 'title' ),
+        'supports' => array( 'title', 'editor' ),
 
         'public' => true,
         'show_ui' => true,
