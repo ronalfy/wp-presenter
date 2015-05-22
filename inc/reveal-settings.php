@@ -1,6 +1,11 @@
 <?php
 
 function wp_presenter_initialize_script() {
+	$width              = get_theme_mod( 'width' );
+	$height             = get_theme_mod( 'height' );
+	$margin             = get_theme_mod( 'margin' );
+	$min_scale          = get_theme_mod( 'minscale' );
+	$max_scale          = get_theme_mod( 'maxscale' );
 	$transition         = get_theme_mod( 'transition' );
 	$transition_speed   = get_theme_mod( 'transition_speed' );
 	$bkg_transition     = get_theme_mod( 'bkg_transition' );
@@ -15,6 +20,11 @@ function wp_presenter_initialize_script() {
 		// Full list of configuration options available here:
 		// https://github.com/hakimel/reveal.js#configuration
 		Reveal.initialize({
+			width:                  <?php if( '' == get_theme_mod( 'width' ) ) { echo 960; } else { echo $width; } ?>,
+			height:                 <?php if( '' == get_theme_mod( 'height' ) ) { echo 700; } else { echo $height; } ?>,
+			margin:                 <?php if( '' == get_theme_mod( 'margin' ) ) { echo 0.1; } else { echo $margin; } ?>,
+			minScale:               <?php if( '' == get_theme_mod( 'minscale' ) ) { echo 0.2; } else { echo $min_scale; } ?>,
+			maxScale:               <?php if( '' == get_theme_mod( 'maxscale' ) ) { echo 1.5; } else { echo $max_scale; } ?>,
 			controls:               <?php if( '' == get_theme_mod( 'controls_right_corner' ) ) { echo 'false'; } else { echo 'true'; } ?>,
 			progress:               <?php if( '' == get_theme_mod( 'progress' ) ) { echo 'true'; } else { echo $progress; } ?>,
 			slideNumber:            <?php if( '' == get_theme_mod( 'number' ) ) { echo 'false'; } else { echo 'true'; } ?>,

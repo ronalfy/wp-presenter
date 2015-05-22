@@ -42,6 +42,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: font-1;
+  font-style: normal;
+  font-weight: normal;
+  src: url('/path/to/font/font-1.eot');
+  src: url('/path/to/font/font-1.eot?') format('eot'), url('/path/to/font/font-1.woff') format('woff'), url('/path/to/font/font-1.ttf') format('truetype'); }
+
+@font-face {
+  font-family: font-2;
+  font-style: normal;
+  font-weight: normal;
+  src: url('/path/to/font/font-2.eot');
+  src: url('/path/to/font/font-2.eot?') format('eot'), url('/path/to/font/font-2.woff') format('woff'), url('/path/to/font/font-2.ttf') format('truetype'); }
+
 .content {
   width: 100%; }
   .content .first-column, .content .second-column {

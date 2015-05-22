@@ -25,6 +25,12 @@ function ds_panels_sections( $wp_customize ) {
 		'priority'          => 20,
 	) );
 
+	$wp_customize->add_section( 'size', array (
+		'title'             => __( 'Size', 'ds' ),
+		'priority'          => 25,
+		'description'       => 'The "normal" size of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.'
+	) );
+
 	$wp_customize->add_section( 'style', array(
 		'title'       => __( 'Style', 'ds' ),
 		'priority'    => 30,
@@ -91,6 +97,63 @@ function ds_fields( $fields ) {
 		'help'        => __( 'Push each slide change to the browser history.', 'ds' ),
 		'section'     => 'settings',
 		'default'     => 0,
+		'priority'    => 30,
+	);
+
+	// Size
+
+	$fields[] = array(
+		'type'        => 'text',
+		'setting'     => 'width',
+		'label'       => __( 'Width', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( '', 'ds' ),
+		'section'     => 'size',
+		'default'     => 960,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'text',
+		'setting'     => 'height',
+		'label'       => __( 'Height', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( '', 'ds' ),
+		'section'     => 'size',
+		'default'     => 700,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'text',
+		'setting'     => 'margin',
+		'label'       => __( 'Margin', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Factor of the display size that should remain empty around the content', 'ds' ),
+		'section'     => 'size',
+		'default'     => 0.1,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'text',
+		'setting'     => 'minscale',
+		'label'       => __( 'MinScale', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Bounds for smallest possible scale to apply to content', 'ds' ),
+		'section'     => 'size',
+		'default'     => 0.2,
+		'priority'    => 30,
+	);
+
+	$fields[] = array(
+		'type'        => 'text',
+		'setting'     => 'maxscale',
+		'label'       => __( 'MaxScale', 'ds' ),
+		'description' => __( '', 'ds' ),
+		'help'        => __( 'Bounds for largest possible scale to apply to content', 'ds' ),
+		'section'     => 'size',
+		'default'     => 1.5,
 		'priority'    => 30,
 	);
 
@@ -178,21 +241,21 @@ function ds_fields( $fields ) {
 		'default'     => 'league-gothic',
 		'priority'    => 20,
 		'choices'  => array(
-			'bubblegum'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/bubblegum.png',
-			'dancing-script'    => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dancing-script.png',
-			'dosis'             => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dosis.png',
-			'encode'            => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/encode.png',
-			'lato'              => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/lato.png',
-			'league-gothic'     => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/league-gothic.png',
-			'libre-baskerville' => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/libre-baskerville.png',
-			'merriweather'      => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/merriweather.png',
-			'montserrat'        => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/montserrat.png',
-			'news-cycle'        => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/news-cycle.png',
-			'open-sans'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/open-sans.png',
-			'palatino-linotype' => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/palatino-linotype.png',
-			'quicksand'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/quicksand.png',
-			'source-sans-pro'   => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/source-sans-pro.png',
-			'ubuntu'            => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/ubuntu.png',
+			'bubblegum_sansregular'     => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/bubblegum.png',
+			'dancing_script_otregular'  => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dancing-script.png',
+			'dosisregular'              => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dosis.png',
+			'encode_sansregular'        => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/encode.png',
+			'latoregular'               => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/lato.png',
+			'league_gothicregular'      => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/league-gothic.png',
+			'libre_baskervilleregular'  => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/libre-baskerville.png',
+			'merriweatherregular'       => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/merriweather.png',
+			'montserratregular'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/montserrat.png',
+			'news_cycleregular'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/news-cycle.png',
+			'open_sansregular'          => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/open-sans.png',
+			'palatino-linotype'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/palatino-linotype.png',
+			'quicksandregular'          => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/quicksand.png',
+			'source-sans-pro'           => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/source-sans-pro.png',
+			'ubunturegular'             => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/ubuntu.png',
 		),
 	);
 
@@ -206,21 +269,21 @@ function ds_fields( $fields ) {
 		'default'     => 'lato',
 		'priority'    => 30,
 		'choices'  => array(
-			'bubblegum'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/bubblegum.png',
-			'dancing-script'    => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dancing-script.png',
-			'dosis'             => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dosis.png',
-			'encode'            => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/encode.png',
-			'lato'              => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/lato.png',
-			'league-gothic'     => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/league-gothic.png',
-			'libre-baskerville' => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/libre-baskerville.png',
-			'merriweather'      => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/merriweather.png',
-			'montserrat'        => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/montserrat.png',
-			'news-cycle'        => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/news-cycle.png',
-			'open-sans'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/open-sans.png',
-			'palatino-linotype' => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/palatino-linotype.png',
-			'quicksand'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/quicksand.png',
-			'source-sans-pro'   => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/source-sans-pro.png',
-			'ubuntu'            => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/ubuntu.png',
+			'bubblegum_sansregular'     => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/bubblegum.png',
+			'dancing_script_otregular'  => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dancing-script.png',
+			'dosisregular'              => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dosis.png',
+			'encode_sansregular'        => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/encode.png',
+			'latoregular'               => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/lato.png',
+			'league_gothicregular'      => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/league-gothic.png',
+			'libre_baskervilleregular'  => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/libre-baskerville.png',
+			'merriweatherregular'       => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/merriweather.png',
+			'montserratregular'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/montserrat.png',
+			'news_cycleregular'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/news-cycle.png',
+			'open_sansregular'          => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/open-sans.png',
+			'palatino-linotype'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/palatino-linotype.png',
+			'quicksandregular'          => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/quicksand.png',
+			'source-sans-pro'           => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/source-sans-pro.png',
+			'ubunturegular'             => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/ubuntu.png',
 		),
 	);
 

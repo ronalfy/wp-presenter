@@ -1,0 +1,5 @@
+@mixin font($font, $style: normal, $weight: normal) {
+  font-family: $font, fallback-font-2, fallback-font-2;
+  font-style:  $style;
+  font-weight: $weight;
+}
