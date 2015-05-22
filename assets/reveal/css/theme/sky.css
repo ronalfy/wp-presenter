@@ -1,5 +1,5 @@
-@import url(../../lib/font/quicksand/stylesheet.css);
-@import url(../../lib/font/open-sans/stylesheet.css);
+@import url(../../../fonts/quicksandregular/quicksandregular.css);
+@import url(../../.../../fonts/open_sansregular/open_sansregular.css);
 /**
  * Sky theme for reveal.js.
  *

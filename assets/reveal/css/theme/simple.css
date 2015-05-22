@@ -1,5 +1,5 @@
-@import url(../../../font/news-cycle/stylesheet.css);
-@import url(../../../font/lato/stylesheet.css);
+@import url(../../../fonts/news_cycleregular/news_cycleregular.css);
+@import url(../../../fonts/latoregular/latoregular.css);
 /**
  * A simple theme for reveal.js presentations, similar
  * to the default theme. The accent color is darkblue.

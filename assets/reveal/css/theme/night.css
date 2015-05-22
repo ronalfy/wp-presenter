@@ -1,5 +1,5 @@
-@import url(../../../font/montserrat/stylesheet.css);
-@import url(../../../font/open-sans/stylesheet.css);
+@import url(../../../fonts/montserratregular/montserratregular.css);
+@import url(../../../fonts/open_sansregular/open_sansregular.css);
 /**
  * Black theme for reveal.js.
  *

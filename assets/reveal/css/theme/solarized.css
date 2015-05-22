@@ -1,5 +1,5 @@
-@import url(../../lib/font/league/stylesheet.css);
-@import url(../../lib/font/lato/stylesheet.css);
+@import url(../../../fonts/league_gothicregular/league_gothicregular.css);
+@import url(../../../fonts/latoregular/latoregular.css);
 /**
  * Solarized Light theme for reveal.js.
  * Author: Achim Staebler
