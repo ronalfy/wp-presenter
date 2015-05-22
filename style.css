@@ -55,14 +55,3 @@ table {
   font-weight: normal;
   src: url('/path/to/font/font-2.eot');
   src: url('/path/to/font/font-2.eot?') format('eot'), url('/path/to/font/font-2.woff') format('woff'), url('/path/to/font/font-2.ttf') format('truetype'); }
-
-.content {
-  width: 100%; }
-  .content .first-column, .content .second-column {
-    float: left; }
-  .content .column {
-    float: left;
-    width: 100%;
-    padding: 2%; }
-  .content .column.half {
-    width: 46%; }

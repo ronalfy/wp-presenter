@@ -242,7 +242,6 @@ function ds_fields( $fields ) {
 		'priority'    => 20,
 		'choices'  => array(
 			'bubblegum_sansregular'     => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/bubblegum.png',
-			'dancing_script_otregular'  => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dancing-script.png',
 			'dosisregular'              => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dosis.png',
 			'encode_sansregular'        => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/encode.png',
 			'latoregular'               => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/lato.png',
@@ -252,8 +251,6 @@ function ds_fields( $fields ) {
 			'montserratregular'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/montserrat.png',
 			'news_cycleregular'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/news-cycle.png',
 			'open_sansregular'          => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/open-sans.png',
-			'palatino-linotype'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/palatino-linotype.png',
-			'quicksandregular'          => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/quicksand.png',
 			'source-sans-pro'           => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/source-sans-pro.png',
 			'ubunturegular'             => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/ubuntu.png',
 		),
@@ -270,7 +267,6 @@ function ds_fields( $fields ) {
 		'priority'    => 30,
 		'choices'  => array(
 			'bubblegum_sansregular'     => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/bubblegum.png',
-			'dancing_script_otregular'  => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dancing-script.png',
 			'dosisregular'              => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dosis.png',
 			'encode_sansregular'        => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/encode.png',
 			'latoregular'               => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/lato.png',
@@ -280,8 +276,6 @@ function ds_fields( $fields ) {
 			'montserratregular'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/montserrat.png',
 			'news_cycleregular'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/news-cycle.png',
 			'open_sansregular'          => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/open-sans.png',
-			'palatino-linotype'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/palatino-linotype.png',
-			'quicksandregular'          => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/quicksand.png',
 			'source-sans-pro'           => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/source-sans-pro.png',
 			'ubunturegular'             => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/ubuntu.png',
 		),

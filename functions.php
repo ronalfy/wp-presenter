@@ -36,7 +36,7 @@ function wp_presenter_scripts() {
 			wp_enqueue_style( 'wp-presenter-theme', get_template_directory_uri() . '/assets/reveal/css/theme/' . $theme . '.css' );
 		endif;
 
-		wp_enqueue_style( 'wp-presenter-zenburn', get_template_directory_uri() . '/assets/reveal/lib/css/zenburn.css' );
+		wp_enqueue_style( 'wp-presenter-zenburn', get_template_directory_uri() . '/assets/reveal/lib/css/monokai.css' );
 
 	endif;
 }
