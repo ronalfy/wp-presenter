@@ -55,6 +55,38 @@ function wp_presenter_load_custom_wp_admin_style() {
 add_action( 'admin_enqueue_scripts', 'wp_presenter_load_custom_wp_admin_style' );
 
 
+add_filter('acf/settings/path', 'my_acf_settings_path');
+
+function acf_settings_path( $path ) {
+
+	// update path
+	$path = get_template_directory() . '/inc/acf/';
+
+	// return
+	return $path;
+
+}
+add_filter('acf/settings/dir', 'acf_settings_dir');
+
+function my_acf_settings_dir( $dir ) {
+
+	// update path
+	$dir = get_template_directory_uri() . '/inc/acf/';
+
+	// return
+	return $dir;
+
+}
+
+
+// 3. Hide ACF field group menu item
+add_filter('acf/settings/show_admin', '__return_false');
+
+
+// 4. Include ACF
+include_once( get_template_directory() . '/acf/acf.php' );
+
+
 require get_template_directory().'/inc/custom-controls/kirki.php';
 require get_template_directory().'/inc/template-tags.php';
 require get_template_directory().'/inc/customizer.php';
