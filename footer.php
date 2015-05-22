@@ -7,12 +7,12 @@
  * @package WP Presenter
  */
 ?>
-</div>
-</div>
-
-
-
-<?php wp_footer(); ?>
-<?php wp_presenter_initialize_script();?>
-</body>
+				</div>
+			</div>
+		<footer>
+			<b>for women everywhere <a href="http://codemanifesto.com/"></a></b>
+		</footer>
+		<?php wp_footer(); ?>
+		<?php wp_presenter_initialize_script();?>
+	</body>
 </html>

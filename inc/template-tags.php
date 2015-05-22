@@ -1,4 +1,16 @@
 <?php
+
+/**
+ * Slide Layouts
+ */
+
+
+function reveal_title_only() {
+	echo '<h2>' . $slide->post_title . '</h2>';
+}
+
+
+
 /**
  * Template Tags
  */

@@ -60,3 +60,4 @@ require get_template_directory().'/inc/customizer.php';
 require get_template_directory().'/inc/reveal-settings.php';
 require get_template_directory().'/inc/post-type.php';
 require get_template_directory().'/inc/meta-functions.php';
+require get_template_directory().'/inc/add-dashboard-widgets.php';
