@@ -6,7 +6,7 @@ function wp_presenter_initialize_script() {
 	$margin             = get_theme_mod( 'margin' );
 	$min_scale          = get_theme_mod( 'minscale' );
 	$max_scale          = get_theme_mod( 'maxscale' );
-	$transition         = get_theme_mod( 'transition' );
+	$transition         = get_theme_mod( 'transitions' );
 	$transition_speed   = get_theme_mod( 'transition_speed' );
 	$bkg_transition     = get_theme_mod( 'bkg_transition' );
 	$view_distance      = get_theme_mod( 'view_distance' );
@@ -41,7 +41,7 @@ function wp_presenter_initialize_script() {
 			mouseWheel:             <?php if( '' == get_theme_mod( 'mousewheel_navigation' ) ) { echo 'false'; } else { echo 'true'; } ?>,
 			hideAddressBar:         <?php if( '' == get_theme_mod( 'hide_address_bar' ) ) { echo 'true'; } else {  echo $hide_address_bar; } ?>,
 			previewLinks:           <?php if( '' == get_theme_mod( 'preview_links' ) ) { echo 'false'; } else { echo 'true'; } ?>,
-			transition:             <?php if( '' == get_theme_mod( 'transition' ) ) { echo '"default"'; } else { echo '"' . $transition . '"'; } ?>,
+			transition:             <?php if( '' == get_theme_mod( 'transitions' ) ) { echo '"default"'; } else { echo '"' . $transition . '"'; } ?>,
 			transitionSpeed:        <?php if( '' == get_theme_mod( 'transition_speed' ) ) { echo '"slow"'; } else { echo '"' . $transition_speed . '"'; } ?>,
 			backgroundTransition:   <?php if( '' == get_theme_mod( 'bkg_transitions' ) ) { echo '"default"'; } else { echo '"' . $bkg_transition . '"'; } ?>,
 			viewDistance:           <?php if( '' == get_theme_mod( 'view_distance' ) ) { echo '3'; } else { echo $view_distance; } ?>,
