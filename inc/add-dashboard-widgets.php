@@ -9,7 +9,7 @@ function wp_presenter_dashboard() {?>
 	<p>Black (default) - White - League - Sky - Beige - Simple
 		Serif - Blood - Night - Moon - Solarized</p>
 	<p><em>You can change the theme and many other settings in the Customizer.</em></p>
-	<button class="wp-core-ui button-primary"><a href="http://wc-preso.dev/wp-admin/customize.php?return=%2Fwp-admin%2F" style="color: #fff;"><?php _e( 'Customize Your Slideshow' );?></a></button>
+	<button class="wp-core-ui button-primary"><a href="<?php echo get_site_url();?>/wp-admin/customize.php?return=%2Fwp-admin%2F" style="color: #fff;"><?php _e( 'Customize Your Slideshow' );?></a></button>
 	<p><small><em>Appearance > Customizer</em></small></p>
 	<hr />
 	<h3>SLIDE OVERVIEW</h3>
