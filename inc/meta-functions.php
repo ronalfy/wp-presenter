@@ -66,7 +66,9 @@ add_action( 'switch_theme', 'reveal_flush_rewrites' );
 //define( 'ACF_LITE' , true );
 //include_once('advanced-custom-fields/acf.php' );
 
-function remove_acf_menu() {
-	remove_menu_page('edit.php?post_type=acf');
-}
-add_action( 'admin_menu', 'remove_acf_menu', 999);
+//function remove_acf_menu() {
+//	remove_menu_page('edit.php?post_type=acf');
+//}
+//add_action( 'admin_menu', 'remove_acf_menu', 999);
+
+remove_action( 'welcome_panel', 'wp_welcome_panel' );

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'league';
+    src: url('league.eot');
+    src: url('league.eot?#iefix') format('embedded-opentype'),
+         url('league.woff') format('woff'),
+         url('league.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}

@@ -64,6 +64,7 @@ get_header();?>
 						<pre>
 							<code>
 								<?php echo $code;?>
+
 							</code>
 						</pre>
 					<?php endif ?>

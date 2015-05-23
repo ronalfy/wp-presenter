@@ -22,8 +22,8 @@
 
 	if ( $header_font ) : ?>
 	<style>
-		@import url(<?php echo get_template_directory_uri() . '/assets/fonts/' . $header_font . '/' . $header_font . '.css';?>);
-		@import url(<?php echo get_template_directory_uri() . '/assets/fonts/' . $body_font . '/' . $body_font . '.css';?>);
+		@import url(<?php echo get_template_directory_uri() . '/assets/reveal/lib/font/' . $header_font . '/' . $header_font . '.css';?>);
+		@import url(<?php echo get_template_directory_uri() . '/assets/reveal/lib/font/' . $body_font . '/' . $body_font . '.css';?>);
 		.reveal h1,
 		.reveal h2,
 		.reveal h3,
