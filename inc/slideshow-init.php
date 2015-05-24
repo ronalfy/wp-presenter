@@ -1,4 +1,6 @@
 <?php
+// Add a Sample Slide on theme activation
+
 if (isset($_GET['activated']) && is_admin()){
 
 	$new_page_title = 'Sample Slide';

@@ -1,5 +1,7 @@
 <?php
 
+// Reveal Settings are defined in customizer.php
+
 function wp_presenter_initialize_script() {
 	$width              = get_theme_mod( 'width' );
 	$height             = get_theme_mod( 'height' );
