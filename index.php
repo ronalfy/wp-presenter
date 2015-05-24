@@ -60,11 +60,11 @@ get_header();?>
 				<?php // slide start ?>
 
 					<?php // title ?>
-					<h2><?php echo $slide->post_title; ?></h2>
+					<h2 class="title"><?php echo $slide->post_title; ?></h2>
 
 					<?php // subtitle ?>
 					<?php $subtitle = get_post_meta( $slide->ID, 'subtitle', true );if( $subtitle ) :?>
-						<h3><?php echo $subtitle;?></h3>
+						<h3 class="title"><?php echo $subtitle;?></h3>
 					<?php endif ?>
 
 					<?php // content ?>
@@ -118,7 +118,7 @@ get_header();?>
 
 				<?php // vertical slides start here ?>
 					<section class="<?php echo $vslide->ID;?>">
-					        <h2><?php echo $vslide_title;?></h2>
+					        <h2 class="title"><?php echo $vslide_title;?></h2>
 						<div class="vertical-slide-content"><?php echo $vslide_content;?></div>
 					</section>
 			  <?php // vertical slide ends here ?>

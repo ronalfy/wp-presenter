@@ -24,8 +24,6 @@ function my_acf_settings_dir( $dir ) {
 	return $dir;
 
 }
-// 4. Include ACF
-include_once( get_template_directory_uri() . '/inc/acf/acf.php' );
 
 if(function_exists("register_field_group")) {
 	register_field_group(array (

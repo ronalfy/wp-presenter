@@ -20,5 +20,4 @@ function reveal_homepage_slides( &$query ) {
 		$query->set( 'order', 'ASC' );
 	}
 }
-
 add_action( 'pre_get_posts', 'reveal_homepage_slides' );

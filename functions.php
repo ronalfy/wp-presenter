@@ -6,7 +6,7 @@
  */
 
 if ( !isset( $content_width ) ) {
-	$content_width = 1200;/* pixels */
+	$content_width = 1400;/* pixels */
 }
 
 if (!function_exists('wp_presenter_setup')):
@@ -16,7 +16,7 @@ function wp_presenter_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 }
-endif;// ts_setup
+endif;
 add_action( 'after_setup_theme', 'wp_presenter_setup' );
 
 
@@ -37,7 +37,6 @@ function wp_presenter_scripts() {
 		endif;
 
 		wp_enqueue_style( 'wp-presenter-zenburn', get_template_directory_uri() . '/assets/reveal/lib/css/monokai.css' );
-		//wp_enqueue_style( 'wp-presenter-prism', get_template_directory_uri() . '/assets/reveal/plugin/prism/prism.css' );
 
 	endif;
 }
@@ -55,18 +54,22 @@ function wp_presenter_load_custom_wp_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'wp_presenter_load_custom_wp_admin_style' );
 
+// Color Contrast Checker
+function getContrast50($hexcolor){
+	return (hexdec($hexcolor) > 0xffffff/2) ? 'black':'white';
+}
 
 
-
-require get_template_directory().'/inc/slideshow-init.php';
-require get_template_directory().'/inc/acf-fields.php';
-require get_template_directory().'/inc/custom-controls/kirki.php';
-require get_template_directory().'/inc/template-tags.php';
-require get_template_directory().'/inc/customizer.php';
-require get_template_directory().'/inc/reveal-settings.php';
-require get_template_directory().'/inc/post-type.php';
-require get_template_directory().'/inc/meta-functions.php';
-require get_template_directory().'/inc/dashboard-widgets.php';
-require get_template_directory().'/inc/acf/acf.php';
-require get_template_directory().'/inc/acf-image-select/acf-image-select.php';
-require get_template_directory().'/inc/acf-url-field/acf-website_field.php';
+require get_template_directory() . '/inc/acf/acf.php';
+require get_template_directory() . '/inc/slideshow-init.php';
+require get_template_directory() . '/inc/acf-fields.php';
+require get_template_directory() . '/inc/custom-controls/kirki.php';
+require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/reveal-settings.php';
+require get_template_directory() . '/inc/post-type.php';
+require get_template_directory() . '/inc/meta-functions.php';
+require get_template_directory() . '/inc/dashboard-widgets.php';
+require get_template_directory() . '/inc/acf/acf.php';
+require get_template_directory() . '/inc/acf-image-select/acf-image-select.php';
+require get_template_directory() . '/inc/acf-url-field/acf-website_field.php';
