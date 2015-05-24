@@ -169,6 +169,11 @@ function ds_fields( $fields ) {
 		'default'     => 'sky',
 		'priority'    => 10,
 		'choices'     => array(
+			'wc-miami' => array(
+				'#f77436',
+				'#1c7db1',
+				'#22901f',
+			),
 			'beige' => array(
 				'#f7f2d3',
 				'#fcfaf3',

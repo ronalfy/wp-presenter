@@ -6,7 +6,7 @@
  */
 get_header();?>
 
-	<?php $slides = get_posts( 'post_type=slide&post_status=publish&posts_per_page=-1&orderby=date&order=ASC' );?>
+	<?php $slides = get_posts( 'post_type=slide&post_status=publish&posts_per_page=-1&orderby=menu_order&order=ASC' );?>
 
 	<?php foreach ( $slides as $slide ) : ?>
 	<?php

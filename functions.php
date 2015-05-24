@@ -54,13 +54,6 @@ function wp_presenter_load_custom_wp_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'wp_presenter_load_custom_wp_admin_style' );
 
-// Color Contrast Checker
-function getContrast50($hexcolor){
-	return (hexdec($hexcolor) > 0xffffff/2) ? 'black':'white';
-}
-
-
-require get_template_directory() . '/inc/acf/acf.php';
 require get_template_directory() . '/inc/slideshow-init.php';
 require get_template_directory() . '/inc/acf-fields.php';
 require get_template_directory() . '/inc/custom-controls/kirki.php';
