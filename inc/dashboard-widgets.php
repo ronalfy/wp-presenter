@@ -3,13 +3,13 @@
 /**
  * Content of Dashboard-Widget
  */
-function wp_presenter_dashboard() {?>
-	<h3>THEMES</h3>
+function wp_presenter_dashboard() {
+	_e( '<h3>THEMES</h3>
 	<p>reveal.js comes with a few themes built in:</p>
 	<p>Black (default) - White - League - Sky - Beige - Simple
 		Serif - Blood - Night - Moon - Solarized</p>
 	<p><em>You can change the theme and many other settings in the Customizer.</em></p>
-	<button class="wp-core-ui button-primary"><a href="<?php echo get_site_url();?>/wp-admin/customize.php?return=%2Fwp-admin%2F" style="color: #fff;"><?php _e( 'Customize Your Slideshow' );?></a></button>
+	<button class="wp-core-ui button-primary"><a href="' . get_site_url() . '/wp-admin/customize.php?return=%2Fwp-admin%2F" style="color: #fff;"> Customize Your Slideshow </a></button>
 	<p><small><em>Appearance > Customizer</em></small></p>
 	<hr />
 	<h3>SLIDE OVERVIEW</h3>
@@ -18,8 +18,7 @@ function wp_presenter_dashboard() {?>
 	<hr />
 
 	<h3>PRETTY CODE</h3>
-	<p>Code syntax highlighting courtesy of highlight.js.</p>
-	<?php
+	<p>Code syntax highlighting courtesy of highlight.js.</p>' );
 }
 
 /**

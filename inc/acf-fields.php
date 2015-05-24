@@ -1,4 +1,7 @@
 <?php
+
+// Include ACF per instructions found here:
+// http://www.advancedcustomfields.com/resources/including-acf-in-a-plugin-theme/
 add_filter('acf/settings/path', 'my_acf_settings_path');
 
 function acf_settings_path( $path ) {
@@ -34,9 +37,7 @@ if(function_exists("register_field_group")) {
 				'label' => 'Select a Layout',
 				'name' => '',
 				'type' => 'message',
-				'message' => 'Select a slide layout from the choices below.
-	For the slide title use the title field above.
-	If you need a "title only" slide use the title field only.',
+				'message' => 'Select a slide layout from the choices below. For the slide title use the title field above. If you need a "title only" slide use the title field only.',
 			),
 			array (
 				'key' => 'field_555da5a232a39',

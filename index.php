@@ -36,18 +36,18 @@ get_header();?>
 	<?php // If a slide has a background video chosen ?>
 	<?php if ( get_post_meta ( $slide->ID, 'change_slide_background', true )  == 'Video' ) { ?>
 		<?php // display the video as a data-attribute ?>
-		<section data-background-video="<?php echo $video_url; ?>">
+		<section id="video-background" class="stretch" data-background-video="<?php echo $video_url; ?>">
 
 
 		<?php // if a slide has a background color chosen ?>
 	<?php } elseif ( '' != get_post_meta ( $slide->ID, 'background_color', true ) ) { ?>
 		<?php // display the background color as a data-attribute ?>
-		<section data-background="<?php echo $bkg_color; ?>">
+		<section id="background-color" data-background="<?php echo $bkg_color; ?>">
 
 		<?php // if a slide has a background image chosen ?>
 	<?php } elseif ( $bkg_img ) { ?>
 		<?php // display the image url as a data-attribute ?>
-		<section data-background="<?php echo $bkg_img_url[0]; ?>">
+		<section id="background-image" data-background="<?php echo $bkg_img_url[0]; ?>">
 
 		<?php // if a slide has an iframe chosen ?>
 	<?php } elseif ( $iframe ) { ?>
