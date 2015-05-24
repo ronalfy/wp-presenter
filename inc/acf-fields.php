@@ -24,8 +24,7 @@ function my_acf_settings_dir( $dir ) {
 // 4. Include ACF
 include_once( get_template_directory_uri() . '/inc/acf/acf.php' );
 
-if(function_exists("register_field_group"))
-{
+if(function_exists("register_field_group")) {
 	register_field_group(array (
 		'id' => 'acf_slide-layout-and-content',
 		'title' => 'Slide Layout and Content',
@@ -45,6 +44,7 @@ if(function_exists("register_field_group"))
 				'name' => 'slide_layout',
 				'type' => 'select',
 				'choices' => array (
+					'blank' => 'Blank (No Content)',
 					'title' => 'Title',
 					'title-subtitle' => 'Title/Subtitle',
 					'title-content' => 'Title/Content',
@@ -52,6 +52,7 @@ if(function_exists("register_field_group"))
 					'content-image-right' => 'Content/Image Right',
 					'title-image' => 'Title/Image',
 					'code' => 'Code',
+					'iframe' => 'Iframe',
 				),
 				'default_value' => '',
 				'allow_null' => 0,
@@ -204,7 +205,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_555daf944d148',
 				'label' => 'Code',
 				'name' => 'code',
-				'type' => 'code_area',
+				'type' => 'textarea',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -216,8 +217,32 @@ if(function_exists("register_field_group"))
 					),
 					'allorany' => 'all',
 				),
-				'language' => 'htmlmixed',
-				'theme' => 'monokai',
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'br',
+			),
+			array (
+				'key' => 'field_556110fc268ee',
+				'label' => 'Iframe',
+				'name' => 'iframe',
+				'type' => 'website',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_555da5a232a39',
+							'operator' => '==',
+							'value' => 'iframe',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'website_title' => 0,
+				'internal_link' => 0,
+				'output_format' => 0,
+				'default_value' => '',
 			),
 		),
 		'location' => array (
@@ -403,30 +428,10 @@ if(function_exists("register_field_group"))
 				'library' => 'all',
 			),
 			array (
-				'key' => 'field_555db10a0eb3f',
-				'label' => 'Tiled Image',
-				'name' => 'tiled_image',
-				'type' => 'image',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_555db03c0eb3c',
-							'operator' => '==',
-							'value' => 'Tiled Image',
-						),
-					),
-					'allorany' => 'all',
-				),
-				'save_format' => 'id',
-				'preview_size' => 'medium',
-				'library' => 'all',
-			),
-			array (
 				'key' => 'field_555db1300eb40',
 				'label' => 'Video',
 				'name' => 'video',
-				'type' => 'oembed',
+				'type' => 'file',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -438,9 +443,8 @@ if(function_exists("register_field_group"))
 					),
 					'allorany' => 'all',
 				),
-				'preview_size' => 'medium',
-				'returned_size' => 'full',
-				'returned_format' => 'url',
+				'save_format' => 'url',
+				'library' => 'all',
 			),
 		),
 		'location' => array (
@@ -465,12 +469,13 @@ if(function_exists("register_field_group"))
 				4 => 'discussion',
 				5 => 'comments',
 				6 => 'revisions',
-				7 => 'author',
-				8 => 'format',
-				9 => 'featured_image',
-				10 => 'categories',
-				11 => 'tags',
-				12 => 'send-trackbacks',
+				7 => 'slug',
+				8 => 'author',
+				9 => 'format',
+				10 => 'featured_image',
+				11 => 'categories',
+				12 => 'tags',
+				13 => 'send-trackbacks',
 			),
 		),
 		'menu_order' => 2,
