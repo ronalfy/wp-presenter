@@ -9,15 +9,55 @@ get_header();?>
 	<?php $slides = get_posts( 'post_type=slide&post_status=publish&posts_per_page=-1&orderby=date&order=ASC' );?>
 
 	<?php foreach ( $slides as $slide ) : ?>
-	<?php $vslides = get_post_meta( $slide->ID, 'add_a_vertical_slide', true );
+	<?php
+	$vslides = get_post_meta( $slide->ID, 'add_a_vertical_slide', true );
 	$vslide_title = get_post_meta( $slide->ID, 'vertical_slide_title', true );
-	$vslide_content = get_post_meta( $slide->ID, 'vertical_slide_content', true );?>
+	$vslide_content = get_post_meta( $slide->ID, 'vertical_slide_content', true );
+
+	// Video Background
+	$video_bkg = get_post_meta( $slide->ID, 'video', true );
+	$video_src = get_attached_media( $video_bkg );
+	$video_url = wp_get_attachment_url( $video_bkg );
+
+	// Full Size Image Background
+	$bkg_img = get_post_meta( $slide->ID, 'image', true );
+	$bkg_img_url = wp_get_attachment_image_src( $bkg_img, 'full' );
+
+	// Iframe
+	$iframe = get_post_meta( $slide->ID, 'iframe', true );
+
+	$bkg_color = get_post_meta( $slide->ID, 'background_color', true );
+	?>
 
 		<?php if( $vslides[0] == 'vertical_slide_yes' ) : ?>
 			<section><?php // This OPENING tag will only exist if there are vertical slides that need to be nested with the main slide ?>
 		<?php endif;?>
 
-				<section><?php // slide start ?>
+	<?php // If a slide has a background video chosen ?>
+	<?php if ( get_post_meta ( $slide->ID, 'change_slide_background', true )  == 'Video' ) { ?>
+		<?php // display the video as a data-attribute ?>
+		<section data-background-video="<?php echo $video_url; ?>">
+
+
+		<?php // if a slide has a background color chosen ?>
+	<?php } elseif ( '' != get_post_meta ( $slide->ID, 'background_color', true ) ) { ?>
+		<?php // display the background color as a data-attribute ?>
+		<section data-background="<?php echo $bkg_color; ?>">
+
+		<?php // if a slide has a background image chosen ?>
+	<?php } elseif ( $bkg_img ) { ?>
+		<?php // display the image url as a data-attribute ?>
+		<section data-background="<?php echo $bkg_img_url[0]; ?>">
+
+		<?php // if a slide has an iframe chosen ?>
+	<?php } elseif ( $iframe ) { ?>
+		<?php // display the image url as a data-attribute ?>
+		<section id="iframe" data-background-iframe="<?php echo $iframe['url'];?>">
+
+		<?php } else { ?>
+				<section><?php };?>
+
+				<?php // slide start ?>
 
 					<?php // title ?>
 					<h2><?php echo $slide->post_title; ?></h2>
@@ -34,23 +74,23 @@ get_header();?>
 
 					<?php // content left column ?>
 					<?php $content_left = get_post_meta( $slide->ID, 'content_left_column_two_columns', true );if( $content_left ) :?>
-						<div class="content" style="width:48%;float:left;margin-top:40px;margin-right:2%;"><?php echo $content_left;?></div>
+						<div class="content-left"><?php echo $content_left;?></div>
 					<?php endif ?>
 
 					<?php // content right column ?>
 					<?php $content_right = get_post_meta( $slide->ID, 'content_right_column_two_columns', true );if( $content_right ) :?>
-						<div class="content" style="width:48%;float:right;margin-top:40px;"><?php echo $content_right;?></div>
+						<div class="content-right"><?php echo $content_right;?></div>
 					<?php endif ?>
 
 					<?php // content - content left image right ?>
 					<?php $content_left_image_right = get_post_meta( $slide->ID, 'content_content_image_right', true );if( $content_left_image_right ) :?>
-						<div class="content" style="width:48%;float:left;margin-top:40px;"><?php echo $content_left_image_right;?></div>
+						<div class="content-left"><?php echo $content_left_image_right;?></div>
 					<?php endif ?>
 
 					<?php // image - content left image right ?>
 					<?php $image_right = get_post_meta( $slide->ID, 'image_content_image_right', true );if( $image_right ) :
 						$image_url = wp_get_attachment_image_src( $image_right, 'full' );?>
-						<img src="<?php echo $image_url[0]; ?>" style="width:48%;float:right;margin-top:40px;background-size:cover;">
+						<div class="content-right"><img src="<?php echo $image_url[0]; ?>"></div>
 					<?php endif ?>
 
 					<?php // image - title/image ?>
@@ -62,9 +102,8 @@ get_header();?>
 					<?php // code ?>
 					<?php $code = get_post_meta( $slide->ID, 'code', true );if( $code ) : ?>
 						<pre>
-							<code>
+							<code data-trim>
 								<?php echo $code;?>
-
 							</code>
 						</pre>
 					<?php endif ?>
