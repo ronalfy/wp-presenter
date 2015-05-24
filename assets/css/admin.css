@@ -427,3 +427,22 @@ body.IE7 .Switch.Round {
 .customize-control-number .stepper .stepper-arrow.down {
     background-position: center bottom;
     bottom: 0; }
+
+
+#wpwrap {
+    background: #f7f7f7;
+}
+#adminmenuback {
+    background-color: #222428 !important;
+
+}
+
+#titlediv {
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 1em 0;
+}
