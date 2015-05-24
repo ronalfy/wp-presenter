@@ -11,8 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-class acf_field_image_select_plugin
-{
+class acf_field_image_select_plugin {
 	/*
 	*  Construct
 	*
@@ -21,8 +20,7 @@ class acf_field_image_select_plugin
 	*  @created: 04/02/2014
 	*/
 
-	function __construct()
-	{
+	function __construct() {
 		// set text domain
 		/*
 		$domain = 'acf-image_select';
@@ -33,27 +31,6 @@ class acf_field_image_select_plugin
 
 		// version 4+
 		add_action('acf/register_fields', array($this, 'register_fields'));
-
-
-		// version 3-
-		add_action('init', array( $this, 'init' ), 5);
-	}
-
-
-	/*
-	*  Init
-	*
-	*  @description:
-	*  @since: 3.6
-	*  @created: 04/02/2014
-	*/
-
-	function init()
-	{
-		if(function_exists('register_field'))
-		{
-			register_field('acf_field_image_select', dirname(__File__) . '/image-select-v3.php');
-		}
 	}
 
 	/*
@@ -64,12 +41,9 @@ class acf_field_image_select_plugin
 	*  @created: 04/02/2014
 	*/
 
-	function register_fields()
-	{
+	function register_fields() {
 		include_once('image-select-v4.php');
 	}
 
 }
-
 new acf_field_image_select_plugin();
-?>
