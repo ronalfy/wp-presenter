@@ -9,7 +9,7 @@ function wp_presenter_dashboard() {
 	<p>Black (default) - White - League - Sky - Beige - Simple
 		Serif - Blood - Night - Moon - Solarized</p>
 	<p><em>You can change the theme and many other settings in the Customizer.</em></p>
-	<button class="wp-core-ui button-primary"><a href="' . get_site_url() . '/wp-admin/customize.php?return=%2Fwp-admin%2F" style="color: #fff;"> Customize Your Slideshow </a></button>
+	<button style="background: #3DCB96;border:none;padding:10px 20px;text-transform:uppercase;letter-spacing: .5px; "><a href="' . get_site_url() . '/wp-admin/customize.php?return=%2Fwp-admin%2F" style="color: #fff;"> Customize Your Slideshow </a></button>
 	<p><small><em>Appearance > Customizer</em></small></p>
 	<hr />
 	<h3>SLIDE OVERVIEW</h3>
@@ -42,13 +42,10 @@ function wp_presenter_dashboard_widget_first() {?>
 	<h3>TAKE A MOMENT</h3>
 	<p>Press B or . on your keyboard to pause the presentation.</p>
 	<p>This is helpful when you're on stage and want to take distracting slides off the screen.</p>
-
 <?php
 }
-
 
 function wp_presenter_add_first_dashboard_widget() {
 	wp_add_dashboard_widget('wp_presenter_dashboard_widget', __( 'Based on Reveal.js' ), 'wp_presenter_dashboard_widget_first');
 }
 add_action('wp_dashboard_setup', 'wp_presenter_add_first_dashboard_widget');
-

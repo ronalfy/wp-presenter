@@ -20,30 +20,35 @@ function ds_panels_sections( $wp_customize ) {
 	/*
  * Global Setting Section
  */
+	$wp_customize->add_section( 'theme', array(
+		'title'       => __( 'Theme', 'ds' ),
+		'priority'    => 20,
+	) );
+
+	$wp_customize->add_section( 'fonts', array(
+		'title'       => __( 'Fonts', 'ds' ),
+		'priority'    => 25,
+	) );
+
 	$wp_customize->add_section( 'settings', array (
-		'title'             => __( 'Global Settings', 'ds' ),
-		'priority'          => 20,
-	) );
-
-	$wp_customize->add_section( 'size', array (
-		'title'             => __( 'Size', 'ds' ),
-		'priority'          => 25,
-		'description'       => 'The "normal" size of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.'
-	) );
-
-	$wp_customize->add_section( 'style', array(
-		'title'       => __( 'Style', 'ds' ),
+		'title'       => __( 'Global Settings', 'ds' ),
 		'priority'    => 30,
 	) );
 
+	$wp_customize->add_section( 'size', array (
+		'title'       => __( 'Size', 'ds' ),
+		'priority'    => 35,
+		'description' => 'The "normal" size of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.'
+	) );
+
 	$wp_customize->add_section( 'visual_settings', array (
-		'title'             => __( 'Visual Settings', 'ds' ),
-		'priority'          => 40,
+		'title'      => __( 'Visual Settings', 'ds' ),
+		'priority'   => 40,
 	) );
 
 	$wp_customize->add_section( 'navigation', array(
-		'title'       => __( 'Navigation', 'ds' ),
-		'priority'    => 50,
+		'title'      => __( 'Navigation', 'ds' ),
+		'priority'   => 50,
 	) );
 
 	$wp_customize->add_section( 'transitions', array(
@@ -52,8 +57,8 @@ function ds_panels_sections( $wp_customize ) {
 	) );
 
 	$wp_customize->add_section( 'mobile', array (
-		'title'          => __( 'Mobile', 'ds' ),
-		'priority'       => 80,
+		'title'       => __( 'Mobile', 'ds' ),
+		'priority'    => 80,
 	) );
 
 }
@@ -165,7 +170,7 @@ function ds_fields( $fields ) {
 		'label'       => __( 'Theme', 'ds' ),
 		'description' => __( '', 'ds' ),
 		'help'        => __( 'The colors for the theme of your slideshow.', 'ds' ),
-		'section'     => 'style',
+		'section'     => 'theme',
 		'default'     => 'sky',
 		'priority'    => 10,
 		'choices'     => array(
@@ -242,10 +247,10 @@ function ds_fields( $fields ) {
 		'label'       => __( 'Header Typography', 'ds' ),
 		'description' => __( 'Select the font to use for the Headings in your slideshow.', 'ds' ),
 		'help'        => __( 'All fonts have been embedded using @font-face so that you don\'t have to worry about connection issues.', 'ds' ),
-		'section'     => 'style',
+		'section'     => 'fonts',
 		'default'     => 'league-gothic',
 		'priority'    => 20,
-		'choices'  => array(
+		'choices'     => array(
 			'bubblegum'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/bubblegum.png',
 			'dosis'             => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dosis.png',
 			'encode'            => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/encode.png',
@@ -268,10 +273,10 @@ function ds_fields( $fields ) {
 		'label'       => __( 'All Other Typography', 'ds' ),
 		'description' => __( 'Select the font to use in all other areas of your slideshow.', 'ds' ),
 		'help'        => __( 'All fonts have been embedded using @font-face so that you don\'t have to worry about connection issues.', 'ds' ),
-		'section'     => 'style',
+		'section'     => 'fonts',
 		'default'     => 'lato',
 		'priority'    => 30,
-		'choices'  => array(
+		'choices'     => array(
 			'bubblegum'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/bubblegum.png',
 			'dosis'             => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/dosis.png',
 			'encode'            => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/encode.png',
@@ -508,11 +513,7 @@ function ds_fields( $fields ) {
 		'default'     => 1,
 		'priority'    => 30,
 	);
-
-
-
 	return $fields;
-
 }
 add_filter( 'kirki/fields', 'ds_fields' );
 

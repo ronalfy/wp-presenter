@@ -54,7 +54,6 @@ function wp_presenter_load_custom_wp_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'wp_presenter_load_custom_wp_admin_style' );
 
-require get_template_directory() . '/inc/slideshow-init.php';
 require get_template_directory() . '/inc/acf-fields.php';
 require get_template_directory() . '/inc/custom-controls/kirki.php';
 require get_template_directory() . '/inc/template-tags.php';
