@@ -34,28 +34,35 @@ get_header();?>
 		<?php endif;?>
 
 	<?php // If a slide has a background video chosen ?>
-	<?php if ( get_post_meta ( $slide->ID, 'change_slide_background', true )  == 'Video' ) { ?>
+	<?php if ( get_post_meta ( $slide->ID, 'change_slide_background', true )  == 'Video' ) : ?>
 		<?php // display the video as a data-attribute ?>
 		<section id="video-background" class="stretch" data-background-video="<?php echo $video_url; ?>">
+		<?php endif;?>
 
 
 		<?php // if a slide has a background color chosen ?>
-	<?php } elseif ( '' != get_post_meta ( $slide->ID, 'background_color', true ) ) { ?>
+	<?php if ( '' != get_post_meta ( $slide->ID, 'background_color', true ) ) : ?>
 		<?php // display the background color as a data-attribute ?>
 		<section id="background-color" data-background="<?php echo $bkg_color; ?>">
+	<?php endif;?>
 
 		<?php // if a slide has a background image chosen ?>
-	<?php } elseif ( $bkg_img ) { ?>
+	<?php if ( $bkg_img ) : ?>
 		<?php // display the image url as a data-attribute ?>
 		<section id="background-image" data-background="<?php echo $bkg_img_url[0]; ?>">
+	<?php endif;?>
 
 		<?php // if a slide has an iframe chosen ?>
-	<?php } elseif ( $iframe ) { ?>
+	<?php if ( $iframe ) :?>
 		<?php // display the image url as a data-attribute ?>
 		<section id="iframe" data-background-iframe="<?php echo $iframe['url'];?>">
+	<?php endif;?>
 
-		<?php } else { ?>
-				<section><?php };?>
+	<?php // if a slide has no alternate background chosen ?>
+	<?php if ( 'Select One' == get_post_meta( $slide->ID, 'change_slide_background', true ) ) :?>
+		<section>
+	<?php endif;?>
+
 
 				<?php // slide start ?>
 
@@ -117,9 +124,9 @@ get_header();?>
 				</section><?php // slide end ?>
 
 				<?php // vertical slides start here ?>
-					<section class="<?php echo $vslide->ID;?>">
+					<section>
 					        <h2 class="title"><?php echo $vslide_title;?></h2>
-						<div class="vertical-slide-content"><?php echo $vslide_content;?></div>
+						<?php echo $vslide_content;?>
 					</section>
 			  <?php // vertical slide ends here ?>
 
