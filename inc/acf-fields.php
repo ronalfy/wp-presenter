@@ -1,30 +1,5 @@
 <?php
 
-// Include ACF per instructions found here:
-// http://www.advancedcustomfields.com/resources/including-acf-in-a-plugin-theme/
-add_filter('acf/settings/path', 'my_acf_settings_path');
-
-function acf_settings_path( $path ) {
-
-	// update path
-	$path = get_template_directory() . '/inc/acf/';
-
-	// return
-	return $path;
-
-}
-add_filter('acf/settings/dir', 'acf_settings_dir');
-
-function my_acf_settings_dir( $dir ) {
-
-	// update path
-	$dir = get_template_directory_uri() . '/inc/acf/';
-
-	// return
-	return $dir;
-
-}
-
 if(function_exists("register_field_group")) {
 	register_field_group(array (
 		'id' => 'acf_slide-layout-and-content',

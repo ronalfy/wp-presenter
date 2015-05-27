@@ -62,7 +62,4 @@ add_action( 'wp_before_admin_bar_render', 'reveal_remove_admin_bar_links' );
 add_filter( 'show_admin_bar', '__return_false' );
 add_action( 'after_switch_theme', 'reveal_flush_rewrites' );
 add_action( 'switch_theme', 'reveal_flush_rewrites' );
-
-define( 'ACF_LITE', true );
-
 remove_action( 'welcome_panel', 'wp_welcome_panel' );
