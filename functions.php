@@ -39,7 +39,7 @@ endif;
 
 
 }
-	add_action( 'wp_enqueue_scripts', 'wp_presenter_scripts' );
+add_action( 'wp_enqueue_scripts', 'wp_presenter_scripts' );
 
 add_filter( 'script_loader_tag', function( $tag, $handle ) {
 	if ( $handle === 'html5shiv' ) {
@@ -67,7 +67,7 @@ add_filter('acf/settings/dir', 'wp_presenter_acf_settings_dir');
 
 add_filter('acf/settings/show_admin', '__return_false');
 
-define( 'ACF_LITE', true );
+//define( 'ACF_LITE', true );
 
 require get_template_directory() . '/inc/custom-controls/kirki.php';
 require get_template_directory() . '/inc/template-tags.php';
@@ -79,4 +79,3 @@ require get_template_directory() . '/inc/dashboard-widgets.php';
 require get_template_directory() . '/inc/acf/acf.php';
 require get_template_directory() . '/inc/acf-image-select/acf-image-select.php';
 require get_template_directory() . '/inc/acf-url-field/acf-website_field.php';
-require get_template_directory() . '/inc/acf-fields.php';

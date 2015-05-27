@@ -248,7 +248,7 @@ function ds_fields( $fields ) {
 		'description' => __( 'Select the font to use for the Headings in your slideshow.', 'ds' ),
 		'help'        => __( 'All fonts have been embedded using @font-face so that you don\'t have to worry about connection issues.', 'ds' ),
 		'section'     => 'fonts',
-		'default'     => 'league-gothic',
+		'default'     => 'quicksand',
 		'priority'    => 20,
 		'choices'     => array(
 			'bubblegum'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/bubblegum.png',
@@ -414,7 +414,7 @@ function ds_fields( $fields ) {
 		'description' => __( '', 'ds' ),
 		'help'        => __( 'Enable slide navigation via mouse wheel.', 'ds' ),
 		'section'     => 'navigation',
-		'default'     => 1,
+		'default'     => 0,
 		'priority'    => 30,
 	);
 

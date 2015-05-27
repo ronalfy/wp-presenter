@@ -12,9 +12,22 @@ function wp_presenter_initialize_script() {
 	$transition_speed   = get_theme_mod( 'transition_speed' );
 	$bkg_transition     = get_theme_mod( 'bkg_transition' );
 	$view_distance      = get_theme_mod( 'view_distance' );
-	$fragments          = get_theme_mod( 'fragments' );
 	$hide_address_bar   = get_theme_mod( 'hide_address_bar' );
 	$progress           = get_theme_mod( 'progress' );
+	$controls           = get_theme_mod( 'controls_right_corner' );
+	$slide_number       = get_theme_mod( 'number' );
+	$history            = get_theme_mod( 'history' );
+	$loop               = get_theme_mod( 'loop_presentation' );
+	$keyboard           = get_theme_mod( 'keyboard_shortcuts' );
+	$overview           = get_theme_mod( 'overview' );
+	$center             = get_theme_mod( 'center' );
+	$touch              = get_theme_mod( 'touch' );
+	$rtl                = get_theme_mod( 'rtl' );
+	$embedded           = get_theme_mod( 'embedded' );
+	$help               = get_theme_mod( 'help' );
+	$mouse              = get_theme_mod( 'mousewheel_navigation' );
+	$preview_links      = get_theme_mod( 'preview_links' );
+
 
 	?>
 
@@ -27,22 +40,21 @@ function wp_presenter_initialize_script() {
 			margin:                 <?php if( '' == get_theme_mod( 'margin' ) ) { echo 0.1; } else { echo $margin; } ?>,
 			minScale:               <?php if( '' == get_theme_mod( 'minscale' ) ) { echo 0.2; } else { echo $min_scale; } ?>,
 			maxScale:               <?php if( '' == get_theme_mod( 'maxscale' ) ) { echo 1.5; } else { echo $max_scale; } ?>,
-			controls:               <?php if( '' == get_theme_mod( 'controls_right_corner' ) ) { echo 'false'; } else { echo 'true'; } ?>,
+			controls:               <?php if( get_theme_mod( 'controls_right_corner' ) ) { echo $controls; } else { echo 'true'; } ?>,
 			progress:               <?php if( '' == get_theme_mod( 'progress' ) ) { echo 'true'; } else { echo $progress; } ?>,
-			slideNumber:            <?php if( '' == get_theme_mod( 'number' ) ) { echo 'false'; } else { echo 'true'; } ?>,
-			history:                <?php if( '' == get_theme_mod( 'history' ) ) { echo 'false'; } else { echo 'true'; } ?>,
-			keyboard:               <?php if( '' == get_theme_mod( 'keyboard_shortcuts' ) ) { echo 'false'; } else { echo 'true'; } ?>,
-			overview:               <?php if( '' == get_theme_mod( 'overview' ) ) { echo 'false'; } else { echo 'true'; } ?>,
-			center:                 <?php if( '' == get_theme_mod( 'center' ) ) { echo 'false'; } else { echo 'true'; } ?>,
+			slideNumber:            <?php if( '' == get_theme_mod( 'number' ) ) { echo 'false'; } else { echo $slide_number; } ?>,
+			history:                <?php if( '' == get_theme_mod( 'history' ) ) { echo 'false'; } else { echo $history; } ?>,
+			keyboard:               <?php if( '' == get_theme_mod( 'keyboard_shortcuts' ) ) { echo 'false'; } else { echo $keyboard; } ?>,
+			overview:               <?php if( '' == get_theme_mod( 'overview' ) ) { echo 'false'; } else { echo $overview; } ?>,
+			center:                 <?php if( '' == get_theme_mod( 'center' ) ) { echo 'false'; } else { echo $center; } ?>,
 			touch:                  <?php if( '' == get_theme_mod( 'touch' ) ) { echo 'false'; } else { echo 'true'; } ?>,
-			loop:                   <?php if( '' == get_theme_mod( 'loop_presentation' ) ) { echo 'false'; } else { echo 'true'; }?>,
-			rtl:                    <?php if( '' == get_theme_mod( 'rtl' ) ) { echo 'false'; } else { echo 'true'; } ?>,
-			fragments:              <?php if( '' == get_theme_mod( 'fragments' ) ) { echo 'true'; } else { echo $fragments; } ?>,
-			embedded:               <?php if( '' == get_theme_mod( 'embedded' ) ) { echo 'false'; } else { echo 'true'; } ?>,
-			help:                   <?php if( '' == get_theme_mod( 'help' ) ) { echo 'true'; } else { echo 'false'; } ?>,
-			mouseWheel:             <?php if( '' == get_theme_mod( 'mousewheel_navigation' ) ) { echo 'false'; } else { echo 'true'; } ?>,
+			loop:                   <?php if( '' == get_theme_mod( 'loop_presentation' ) ) { echo 'false'; } else { echo $loop; }?>,
+			rtl:                    <?php if( '' == get_theme_mod( 'rtl' ) ) { echo 'false'; } else { echo $rtl; } ?>,
+			embedded:               <?php if( '' == get_theme_mod( 'embedded' ) ) { echo 'false'; } else { echo $embedded; } ?>,
+			help:                   <?php if( '' == get_theme_mod( 'help' ) ) { echo 'true'; } else { echo $help; } ?>,
+			mouseWheel:             <?php if( '' == get_theme_mod( 'mousewheel_navigation' ) ) { echo 'false'; } else { echo $mouse; } ?>,
 			hideAddressBar:         <?php if( '' == get_theme_mod( 'hide_address_bar' ) ) { echo 'true'; } else {  echo $hide_address_bar; } ?>,
-			previewLinks:           <?php if( '' == get_theme_mod( 'preview_links' ) ) { echo 'false'; } else { echo 'true'; } ?>,
+			previewLinks:           <?php if( '' == get_theme_mod( 'preview_links' ) ) { echo 'false'; } else { echo $preview_links; } ?>,
 			transition:             <?php if( '' == get_theme_mod( 'transitions' ) ) { echo '"default"'; } else { echo '"' . $transition . '"'; } ?>,
 			transitionSpeed:        <?php if( '' == get_theme_mod( 'transition_speed' ) ) { echo '"slow"'; } else { echo '"' . $transition_speed . '"'; } ?>,
 			backgroundTransition:   <?php if( '' == get_theme_mod( 'bkg_transitions' ) ) { echo '"default"'; } else { echo '"' . $bkg_transition . '"'; } ?>,
