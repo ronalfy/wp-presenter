@@ -69,7 +69,7 @@ get_header();?>
 
 					<?php // content ?>
 					<?php $content_title_content = get_post_meta( $slide->ID, 'slide_content_title_content', true ); if( $content_title_content ) :?>
-					<div class="content"><?php echo wp_autop( $content_title_content );?></div>
+					<div class="content"><?php echo $content_title_content;?></div>
 					<?php endif ?>
 
 					<?php // content left column ?>
