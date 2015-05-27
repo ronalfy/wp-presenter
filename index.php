@@ -10,61 +10,54 @@ get_header();?>
 
 	<?php foreach ( $slides as $slide ) : ?>
 	<?php
-	$vslides = get_post_meta( $slide->ID, 'add_a_vertical_slide', true );
-	$vslide_title = get_post_meta( $slide->ID, 'vertical_slide_title', true );
-	$vslide_content = get_post_meta( $slide->ID, 'vertical_slide_content', true );
-
-	// Video Background
-	$video_bkg = get_post_meta( $slide->ID, 'video', true );
-	$video_src = get_attached_media( $video_bkg );
-	$video_url = wp_get_attachment_url( $video_bkg );
-
-	// Full Size Image Background
-	$bkg_img = get_post_meta( $slide->ID, 'image', true );
-	$bkg_img_url = wp_get_attachment_image_src( $bkg_img, 'full' );
-
-	// Iframe
-	$iframe = get_post_meta( $slide->ID, 'iframe', true );
-
-	$bkg_color = get_post_meta( $slide->ID, 'background_color', true );
+			$vslides = get_post_meta( $slide->ID, 'add_a_vertical_slide', true );
+			$vslide_title = get_post_meta( $slide->ID, 'vertical_slide_title', true );
+			$vslide_content = get_post_meta( $slide->ID, 'vertical_slide_content', true );
+			// Video Background
+			$video_bkg = get_post_meta( $slide->ID, 'video', true );
+			$video_src = get_attached_media( $video_bkg );
+			$video_url = wp_get_attachment_url( $video_bkg );
+			// Full Size Image Background
+			$bkg_img = get_post_meta( $slide->ID, 'image', true );
+			$bkg_img_url = wp_get_attachment_image_src( $bkg_img, 'full' );
+			// Iframe
+			$iframe = get_post_meta( $slide->ID, 'iframe', true );
+			// Color
+			$bkg_color = get_post_meta( $slide->ID, 'background_color', true );
 	?>
 
-		<?php if( $vslides[0] == 'vertical_slide_yes' ) : ?>
-			<section><?php // This OPENING tag will only exist if there are vertical slides that need to be nested with the main slide ?>
+	<?php if( $vslides[0] == 'vertical_slide_yes' ) : ?>
+		<section><?php // This OPENING tag will only exist if there are vertical slides that need to be nested with the main slide ?>
+	<?php endif;?>
+
+		<?php // If a slide has a background video chosen ?>
+		<?php if ( get_post_meta ( $slide->ID, 'change_slide_background', true )  == 'Video' ) : ?>
+			<?php // display the video as a data-attribute ?>
+			<section id="video-background" class="stretch" data-background-video="<?php echo $video_url; ?>">
+			<?php endif;?>
+
+			<?php // if a slide has a background color chosen ?>
+		<?php if ( '' != get_post_meta ( $slide->ID, 'background_color', true ) ) : ?>
+			<?php // display the background color as a data-attribute ?>
+			<section id="background-color" data-background="<?php echo $bkg_color; ?>">
 		<?php endif;?>
 
-	<?php // If a slide has a background video chosen ?>
-	<?php if ( get_post_meta ( $slide->ID, 'change_slide_background', true )  == 'Video' ) : ?>
-		<?php // display the video as a data-attribute ?>
-		<section id="video-background" class="stretch" data-background-video="<?php echo $video_url; ?>">
+			<?php // if a slide has a background image chosen ?>
+		<?php if ( $bkg_img ) : ?>
+			<?php // display the image url as a data-attribute ?>
+			<section id="background-image" data-background="<?php echo $bkg_img_url[0]; ?>">
 		<?php endif;?>
 
+			<?php // if a slide has an iframe chosen ?>
+		<?php if ( $iframe ) :?>
+			<?php // display the image url as a data-attribute ?>
+			<section id="iframe" data-background-iframe="<?php echo $iframe['url'];?>">
+		<?php endif;?>
 
-		<?php // if a slide has a background color chosen ?>
-	<?php if ( '' != get_post_meta ( $slide->ID, 'background_color', true ) ) : ?>
-		<?php // display the background color as a data-attribute ?>
-		<section id="background-color" data-background="<?php echo $bkg_color; ?>">
-	<?php endif;?>
-
-		<?php // if a slide has a background image chosen ?>
-	<?php if ( $bkg_img ) : ?>
-		<?php // display the image url as a data-attribute ?>
-		<section id="background-image" data-background="<?php echo $bkg_img_url[0]; ?>">
-	<?php endif;?>
-
-		<?php // if a slide has an iframe chosen ?>
-	<?php if ( $iframe ) :?>
-		<?php // display the image url as a data-attribute ?>
-		<section id="iframe" data-background-iframe="<?php echo $iframe['url'];?>">
-	<?php endif;?>
-
-	<?php // if a slide has no alternate background chosen ?>
-	<?php if ( 'Select One' == get_post_meta( $slide->ID, 'change_slide_background', true ) ) :?>
-		<section>
-	<?php endif;?>
-
-
-				<?php // slide start ?>
+		<?php // if a slide has no alternate background chosen ?>
+		<?php if ( 'Select One' == get_post_meta( $slide->ID, 'change_slide_background', true ) ) :?>
+	<section>
+		<?php endif;?>
 
 					<?php // title ?>
 					<h2 class="title"><?php echo $slide->post_title; ?></h2>
@@ -75,8 +68,8 @@ get_header();?>
 					<?php endif ?>
 
 					<?php // content ?>
-					<?php $content_title_content = get_post_meta( $slide->ID, 'slide_content_title_content', true );if( $content_title_content ) :?>
-					<div class="content"><?php echo $content_title_content;?></div>
+					<?php $content_title_content = get_post_meta( $slide->ID, 'slide_content_title_content', true ); if( $content_title_content ) :?>
+					<div class="content"><?php echo wp_autop( $content_title_content );?></div>
 					<?php endif ?>
 
 					<?php // content left column ?>
@@ -115,20 +108,21 @@ get_header();?>
 						</pre>
 					<?php endif ?>
 
-						<?php $speaker_notes = get_post_meta( get_the_ID(), 'speaker_notes', true ); if( $speaker_notes ) : ?>
-						<aside class="notes">
-							<?php echo $speaker_notes; ?>
-						</aside>
-						<?php endif ?>
-
-				</section><?php // slide end ?>
+								<?php $speaker_notes = get_post_meta( get_the_ID(), 'speaker_notes', true ); if( $speaker_notes ) : ?>
+								<aside class="notes">
+									<?php echo $speaker_notes; ?>
+								</aside>
+								<?php endif ?>
+	</section><?php // slide end ?>
 
 				<?php // vertical slides start here ?>
+				<?php if( $vslides[0] == 'vertical_slide_yes' ) : ?>
 					<section>
 					        <h2 class="title"><?php echo $vslide_title;?></h2>
 						<?php echo $vslide_content;?>
 					</section>
-			  <?php // vertical slide ends here ?>
+					<?php endif;?>
+			    <?php // vertical slide ends here ?>
 
 	<?php if( $vslides[0] == 'vertical_slide_yes' ) : ?>
 		</section><?php // This CLOSING tag will only exist if there are vertical slides that need to be nested with the main slide ?>
