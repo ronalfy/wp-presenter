@@ -165,7 +165,7 @@ function ds_fields( $fields ) {
 	// Style
 
 	$fields[] = array(
-		'type'        => 'palette',
+		'type'        => 'radio-image',
 		'setting'     => 'select_theme',
 		'label'       => __( 'Theme', 'ds' ),
 		'description' => __( '', 'ds' ),
@@ -174,71 +174,19 @@ function ds_fields( $fields ) {
 		'default'     => 'sky',
 		'priority'    => 10,
 		'choices'     => array(
-			'wc-miami' => array(
-				'#f77436',
-				'#1c7db1',
-				'#22901f',
+				'miami'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/miami.png',
+				'sky'             => trailingslashit( KIRKI_URL ) . 'assets/images/themes/sky.png',
+				'beige'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/beige.png',
+				'black'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/black.png',
+				'blood'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/blood.png',
+				'league'          => trailingslashit( KIRKI_URL ) . 'assets/images/themes/league.png',
+				'moon'            => trailingslashit( KIRKI_URL ) . 'assets/images/themes/moon.png',
+				'night'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/night.png',
+				'serif'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/serif.png',
+				'simple'          => trailingslashit( KIRKI_URL ) . 'assets/images/themes/simple.png',
+				'solarized'       => trailingslashit( KIRKI_URL ) . 'assets/images/themes/solarized.png',
+				'white'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/white.png',
 			),
-			'beige' => array(
-				'#f7f2d3',
-				'#fcfaf3',
-				'#8b743d',
-				'#c0a76e',
-			),
-			'black' => array(
-				'#222222',
-				'#42affa',
-				'#8dcffc',
-			),
-			'blood' => array(
-				'#222',
-				'#626262',
-				'#a23',
-				'#dd5567',
-			),
-			'league' => array(
-				'#1c1e20',
-				'#555a5f',
-				'#13DAEC',
-				'#71ebf4',
-			),
-			'moon' => array(
-				'#002b36',
-				'#268bd2',
-				'#78bae6',
-			),
-			'night' => array(
-				'#111',
-				'#e7ad52',
-				'#f3d7ac',
-			),
-			'serif' => array(
-				'#F0F1EB',
-				'#51483D',
-				'#8b7b69',
-			),
-			'simple' => array(
-				'#fff',
-				'#00008b',
-				'#0000f1',
-			),
-			'sky' => array(
-				'#add9e4',
-				'#f7fbfc',
-				'#3b759e',
-				'#74a8cb',
-			),
-			'solarized' => array(
-				'#fdf6e3',
-				'#268bd2',
-				'#78bae6',
-			),
-			'white' => array(
-				'#fff',
-				'#2a76dd',
-				'#6ca2e8',
-			),
-		),
 	);
 
 	$fields[] = array(
