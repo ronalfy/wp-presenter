@@ -1,6 +1,6 @@
 <?php
-
-if(function_exists("register_field_group")) {
+if(function_exists("register_field_group"))
+{
 	register_field_group(array (
 		'id' => 'acf_slide-layout-and-content',
 		'title' => 'Slide Layout and Content',

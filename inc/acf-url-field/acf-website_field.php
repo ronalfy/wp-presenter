@@ -1,16 +1,4 @@
 <?php
-/*
-Plugin Name: Advanced Custom Fields: Website Field
-Plugin URI: https://github.com/Jeradin/acf-website-field
-Description: Website Title field for Advanced Custom Fields
-Version: 2.1
-Author: Geet Jacobs
-Author URI: http://anagr.am
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-GitHub Plugin URI: https://github.com/Jeradin/acf-website-field
-GitHub Branch:     master
-*/
 
 
 
@@ -60,23 +48,14 @@ class acf_website_field_plugin
 		include_once('website_url_v5.php');
 	}
 
-
-
-
-	function website_val_enqueue_styles_scripts() {
-	    //wp_enqueue_script( 'acf-custom-validation', plugins_url( 'acf-website-field.js', __FILE__ ) );
-	}
-
 	/**
  	 * Registers and enqueues admin-specific styles.
  	 */
  	public function register_admin_styles() {
- 		wp_enqueue_style( 'acf-website-field', plugins_url( 'acf-website-field.css', __FILE__  ) );
+ 		wp_enqueue_style( 'acf-website-field', get_template_directory_uri() . '/inc/acf-url-field/acf-website-field.css' );
  	} // end register_admin_styles
 
 
 }
 
 new acf_website_field_plugin();
-
-?>

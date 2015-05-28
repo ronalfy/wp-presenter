@@ -53,21 +53,7 @@ function wp_presenter_load_custom_wp_admin_style() {
 }
 add_action( 'admin_enqueue_scripts', 'wp_presenter_load_custom_wp_admin_style' );
 
-function wp_presenter_acf_settings_path( $path ) {
-	$path = get_template_directory() . '/inc/acf/';
-	return $path;
-}
-add_filter('acf/settings/path', 'wp_presenter_acf_settings_path');
-
-function wp_presenter_acf_settings_dir( $dir ) {
-	$dir = get_template_directory_uri() . '/inc/acf/';
-	return $dir;
-}
-add_filter('acf/settings/dir', 'wp_presenter_acf_settings_dir');
-
-add_filter('acf/settings/show_admin', '__return_false');
-
-//define( 'ACF_LITE', true );
+define( 'ACF_LITE', true );
 
 require get_template_directory() . '/inc/custom-controls/kirki.php';
 require get_template_directory() . '/inc/template-tags.php';
@@ -79,3 +65,4 @@ require get_template_directory() . '/inc/dashboard-widgets.php';
 require get_template_directory() . '/inc/acf/acf.php';
 require get_template_directory() . '/inc/acf-image-select/acf-image-select.php';
 require get_template_directory() . '/inc/acf-url-field/acf-website_field.php';
+require get_template_directory() . '/inc/acf-fields.php';
