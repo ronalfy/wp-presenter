@@ -22,7 +22,7 @@ body {
   background-color: #f7fbfc; }
 
 .reveal {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'open-sans', sans-serif;
   font-size: 36px;
   font-weight: normal;
   color: #333; }
@@ -42,7 +42,7 @@ body {
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin: 0 0 20px 0;
   color: #333;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'quicksand', sans-serif;
   font-weight: normal;
   line-height: 1.2;
   text-transform: uppercase;
