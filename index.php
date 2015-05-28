@@ -69,22 +69,22 @@ get_header();?>
 
 					<?php // content ?>
 					<?php $content_title_content = get_post_meta( $slide->ID, 'slide_content_title_content', true ); if( $content_title_content ) :?>
-					<div class="content"><?php echo $content_title_content;?></div>
+					<div class="content"><?php echo wpautop( $content_title_content );?></div>
 					<?php endif ?>
 
 					<?php // content left column ?>
 					<?php $content_left = get_post_meta( $slide->ID, 'content_left_column_two_columns', true );if( $content_left ) :?>
-						<div class="content-left"><?php echo $content_left;?></div>
+						<div class="content-left"><?php echo wpautop( $content_left );?></div>
 					<?php endif ?>
 
 					<?php // content right column ?>
 					<?php $content_right = get_post_meta( $slide->ID, 'content_right_column_two_columns', true );if( $content_right ) :?>
-						<div class="content-right"><?php echo $content_right;?></div>
+						<div class="content-right"><?php echo wpautop( $content_right );?></div>
 					<?php endif ?>
 
 					<?php // content - content left image right ?>
 					<?php $content_left_image_right = get_post_meta( $slide->ID, 'content_content_image_right', true );if( $content_left_image_right ) :?>
-						<div class="content-left"><?php echo $content_left_image_right;?></div>
+						<div class="content-left"><?php echo wpautop( $content_left_image_right );?></div>
 					<?php endif ?>
 
 					<?php // image - content left image right ?>
