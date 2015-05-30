@@ -3,14 +3,12 @@ Theme Name: WP Presenter
 Theme URI: http://serverpress.com/wp-presenter/
 Author: Trisha Salas
 Author URI: http://www.trishasalas.com
-Description: Description
-Version: 0.1 Beta
+Description: Built using reveal.js, WP Presenter showcases the versatility of WordPress - it's more than "just a blog!" WP Presenter was created specifically to allow presentations to be built and presented from within a local WordPress environment, eliminating the need for a wifi connection at WordCamps.
+Version: 0.7.1 Beta
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wp-presenter
 Tags:
 */
-@import "../bower_components/meyer-reset/stylesheets/meyer-reset";
-@import "helpers/helpers";
-@import "../bower_components/susy/sass/susy";
-@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import 'base/base';
+@import 'helpers/helpers';
