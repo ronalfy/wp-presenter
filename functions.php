@@ -29,8 +29,7 @@ function wp_presenter_scripts() {
 	wp_enqueue_style( 'wp-presenter-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'wp-presenter-core', get_template_directory_uri() . '/assets/reveal/css/reveal.css' );
 	wp_enqueue_style( 'wp-presenter-monokai', get_template_directory_uri() . '/assets/reveal/lib/css/monokai.css' );
-	wp_enqueue_style( 'wp-presenter-pdf-styles', get_template_directory_uri() . '/assets/reveal/css/print/pdf.css' );
-	//wp_enqueue_style( 'wp-presenter-print-styles', get_template_directory_uri() . '/assets/reveal/css/print/print.css' );
+	//wp_enqueue_style( 'wp-presenter-pdf-styles', get_template_directory_uri() . '/assets/reveal/css/print/pdf.css' );
 
 	$theme = get_theme_mod( 'select_theme' );
 	if ( $theme ) :
