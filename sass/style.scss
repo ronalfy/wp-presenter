@@ -10,7 +10,5 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wp-presenter
 Tags:
 */
-@import "../bower_components/meyer-reset/stylesheets/meyer-reset";
-@import "helpers/helpers";
-@import "../bower_components/susy/sass/susy";
-@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import 'base/base';
+@import 'helpers/helpers';
