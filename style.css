@@ -3,62 +3,224 @@ Theme Name: WP Presenter
 Theme URI: http://serverpress.com/wp-presenter/
 Author: Trisha Salas
 Author URI: http://www.trishasalas.com
-Description: Description
-Version: 1.0.0
+Description: Built using reveal.js, WP Presenter showcases the versatility of WordPress - it's more than "just a blog!" WP Presenter was created specifically to allow presentations to be built and presented from within a local WordPress environment, eliminating the need for a wifi connection at WordCamps.
+Version: 0.7.2 Beta
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wp-presenter
 Tags:
-GitHub Theme URI: https://github.com/ServerPress/wp-presenter
-GitHub Branch: master
 */
+/* line 6, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/base/_reset.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
+/* line 16, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/base/_reset.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
+/* line 19, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/base/_reset.scss */
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
+/* line 22, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/base/_reset.scss */
 ol, ul {
-  list-style: none; }
+  list-style: none;
+}
 
+/* line 25, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/base/_reset.scss */
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
+/* line 29, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/base/_reset.scss */
 blockquote:before, blockquote:after {
   content: "";
-  content: none; }
+  content: none;
+}
 
+/* line 35, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/base/_reset.scss */
 q:before, q:after {
   content: "";
-  content: none; }
+  content: none;
+}
 
+/* line 40, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/base/_reset.scss */
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
-
-#iframe h2,
-#video-background h2 {
-    display:none;
+  border-spacing: 0;
 }
 
-.content-left,
-.content-right {
-    width: 49%;
-    display: inline-block;
+/* line 1, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf {
+  /* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+  /* SECTION 1: Set default width, margin, float, and
+     background. This prevents elements from extending
+     beyond the edge of the printed page, and prevents
+     unnecessary background images from printing */
+  /* SECTION 2: Remove any elements not needed in print.
+     This would include navigation, ads, sidebars, etc. */
+  /* SECTION 3: Set body font face, size, and color.
+     Consider using a serif font for readability. */
+  /* SECTION 4: Set heading font face, sizes, and color.
+     Differentiate your headings from your body text.
+     Perhaps use a large sans-serif for distinction. */
+  /* SECTION 5: more reveal.js specific additions by @skypanther */
+  /* Slide backgrounds are placed inside of their slide when exporting to PDF */
+  /* All elements should be above the slide-background */
 }
 
-.content-left {
-    float: left;
+/* line 15, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf * {
+  -webkit-print-color-adjust: exact;
 }
 
-.content-right {
-    float: right;
+/* line 19, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf body {
+  margin: 0 auto !important;
+  border: 0;
+  padding: 0;
+  float: none !important;
+  overflow: visible;
+}
+
+/* line 27, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf html {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* line 43, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .nestedarrow,
+body.print-pdf .reveal .controls,
+body.print-pdf .reveal .progress,
+body.print-pdf .reveal .slide-number,
+body.print-pdf .reveal .playback,
+body.print-pdf .reveal.overview,
+body.print-pdf .fork-reveal,
+body.print-pdf .share-reveal,
+body.print-pdf .state-background {
+  display: none !important;
+}
+
+/* line 56, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf h1, body.print-pdf h2, body.print-pdf h3, body.print-pdf h4, body.print-pdf h5, body.print-pdf h6 {
+  text-shadow: 0 0 0 #000 !important;
+}
+
+/* line 60, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .reveal pre code {
+  overflow: hidden !important;
+  font-family: Courier, 'Courier New', monospace !important;
+}
+
+/* line 67, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf ul, body.print-pdf ol, body.print-pdf div, body.print-pdf p {
+  visibility: visible;
+  position: static;
+  width: auto;
+  height: auto;
+  display: block;
+  overflow: visible;
+  margin: auto;
+}
+
+/* line 76, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .reveal {
+  width: auto !important;
+  height: auto !important;
+  overflow: hidden !important;
+}
+
+/* line 81, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .reveal .slides {
+  position: static;
+  width: 100%;
+  height: auto;
+  left: auto;
+  top: auto;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible;
+  display: block;
+  -webkit-perspective: none;
+  -moz-perspective: none;
+  -ms-perspective: none;
+  perspective: none;
+  -webkit-perspective-origin: 50% 50%;
+  /* there isn't a none/auto value but 50-50 is the default */
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+}
+
+/* line 104, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .reveal .slides section {
+  page-break-after: always !important;
+  visibility: visible !important;
+  position: relative !important;
+  display: block !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  min-height: 1px;
+  opacity: 1 !important;
+  -webkit-transform-style: flat !important;
+  -moz-transform-style: flat !important;
+  -ms-transform-style: flat !important;
+  transform-style: flat !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+}
+
+/* line 129, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .reveal section.stack {
+  margin: 0 !important;
+  padding: 0 !important;
+  page-break-after: avoid !important;
+  height: auto !important;
+  min-height: auto !important;
+}
+
+/* line 136, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .reveal img {
+  box-shadow: none;
+}
+
+/* line 139, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .reveal .roll {
+  overflow: visible;
+  line-height: 1em;
+}
+
+/* line 145, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .reveal section .slide-background {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+/* line 154, /Users/trishasalas/Sites/wc-preso.dev/wp-content/themes/wp-presenter/sass/helpers/_print-pdf.scss */
+body.print-pdf .reveal section > * {
+  position: relative;
+  z-index: 1;
 }
