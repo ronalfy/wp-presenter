@@ -1,4 +1,2 @@
-node_modules
-.DS_Store
-.idea/*
-bower_components
+config.codekit
+sass/.sass-cache
