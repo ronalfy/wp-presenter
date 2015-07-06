@@ -29,7 +29,7 @@ page.paperSize = {
 	border: 0
 };
 
-var inputFile = system.args[1] || 'index.html?print-pdf';
+var inputFile = system.args[1] || 'index.php?print-pdf';
 var outputFile = system.args[2] || 'slides.pdf';
 
 if( outputFile.match( /\.pdf$/gi ) === null ) {

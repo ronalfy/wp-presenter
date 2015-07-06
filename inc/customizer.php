@@ -174,7 +174,7 @@ function ds_fields( $fields ) {
 		'default'     => 'sky',
 		'priority'    => 10,
 		'choices'     => array(
-				'miami'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/miami.png',
+				'wc-miami'        => trailingslashit( KIRKI_URL ) . 'assets/images/themes/wc-miami.png',
 				'sky'             => trailingslashit( KIRKI_URL ) . 'assets/images/themes/sky.png',
 				'beige'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/beige.png',
 				'black'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/black.png',
@@ -212,6 +212,7 @@ function ds_fields( $fields ) {
 			'quicksand'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/quicksand.png',
 			'source-sans-pro'   => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/source-sans-pro.png',
 			'ubuntu'            => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/ubuntu.png',
+			'sinkin-sans'       => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/sinkin-sans.png',
 		),
 	);
 
@@ -238,6 +239,7 @@ function ds_fields( $fields ) {
 			'quicksand'         => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/quicksand.png',
 			'source-sans-pro'   => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/source-sans-pro.png',
 			'ubuntu'            => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/ubuntu.png',
+			'sinkin-sans'       => trailingslashit( KIRKI_URL ) . 'assets/images/fonts/sinkin-sans.png',
 		),
 	);
 
