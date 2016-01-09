@@ -32,22 +32,22 @@ table {
 
 body.print-pdf {
   /* Default Print Stylesheet Template
-   by Rob Glazebrook of CSSnewbie.com
-   Last Updated: June 4, 2008
+	 by Rob Glazebrook of CSSnewbie.com
+	 Last Updated: June 4, 2008
 
-   Feel free (nay, compelled) to edit, append, and
-   manipulate this file as you see fit. */
+	 Feel free (nay, compelled) to edit, append, and
+	 manipulate this file as you see fit. */
   /* SECTION 1: Set default width, margin, float, and
-     background. This prevents elements from extending
-     beyond the edge of the printed page, and prevents
-     unnecessary background images from printing */
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
   /* SECTION 2: Remove any elements not needed in print.
-     This would include navigation, ads, sidebars, etc. */
+	   This would include navigation, ads, sidebars, etc. */
   /* SECTION 3: Set body font face, size, and color.
-     Consider using a serif font for readability. */
+	   Consider using a serif font for readability. */
   /* SECTION 4: Set heading font face, sizes, and color.
-     Differentiate your headings from your body text.
-     Perhaps use a large sans-serif for distinction. */
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
   /* SECTION 5: more reveal.js specific additions by @skypanther */
   /* Slide backgrounds are placed inside of their slide when exporting to PDF */
   /* All elements should be above the slide-background */ }

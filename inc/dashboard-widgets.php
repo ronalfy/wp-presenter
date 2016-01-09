@@ -4,6 +4,7 @@
  * Content of Dashboard-Widget
  */
 function wp_presenter_dashboard() {
+
 	_e( '<h3>THEMES</h3>
 	<p>reveal.js comes with a few themes built in:</p>
 	<p>Black (default) - White - League - Sky - Beige - Simple
@@ -25,27 +26,30 @@ function wp_presenter_dashboard() {
  * add Dashboard Widget via function wp_add_dashboard_widget()
  */
 function wp_presenter_dashboard_setup() {
+
 	wp_add_dashboard_widget( 'my_wp_dashboard_test', __( 'Welcome to WP Presenter!' ), 'wp_presenter_dashboard' );
 }
 
 /**
  * use hook, to integrate new widget
  */
-add_action('wp_dashboard_setup', 'wp_presenter_dashboard_setup');
+add_action( 'wp_dashboard_setup', 'wp_presenter_dashboard_setup' );
 
-function wp_presenter_dashboard_widget_first() {?>
+function wp_presenter_dashboard_widget_first() { ?>
 	<h3>SPEAKER VIEW</h3>
 	<p><b>There's a speaker view.</b><p>
 	<p>It includes a timer, preview of the upcoming slide as well as your speaker. </p>
 	<p><em>Press the S key to try it out.</em></p>
-	<hr />
+	<hr/>
 	<h3>TAKE A MOMENT</h3>
 	<p>Press B or . on your keyboard to pause the presentation.</p>
 	<p>This is helpful when you're on stage and want to take distracting slides off the screen.</p>
-<?php
+	<?php
 }
 
 function wp_presenter_add_first_dashboard_widget() {
-	wp_add_dashboard_widget('wp_presenter_dashboard_widget', __( 'Based on Reveal.js' ), 'wp_presenter_dashboard_widget_first');
+
+	wp_add_dashboard_widget( 'wp_presenter_dashboard_widget', __( 'Based on Reveal.js' ), 'wp_presenter_dashboard_widget_first' );
 }
-add_action('wp_dashboard_setup', 'wp_presenter_add_first_dashboard_widget');
+
+add_action( 'wp_dashboard_setup', 'wp_presenter_add_first_dashboard_widget' );

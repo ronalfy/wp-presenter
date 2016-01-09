@@ -4,8 +4,8 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
+	color:         $color__text-input;
+	border:        1px solid $color__border-input;
 	border-radius: 3px;
 
 	&:focus {
@@ -23,5 +23,5 @@ input[type="search"] {
 
 textarea {
 	padding-left: 3px;
-	width: 100%;
+	width:        100%;
 }

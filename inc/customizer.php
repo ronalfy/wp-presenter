@@ -4,16 +4,19 @@
  *
  */
 function ds_customizer_register( $wp_customize ) {
-    $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
-    $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 }
+
 add_action( 'customize_register', 'ds_customizer_register' );
 
 /**
  * Create our panels and sections.
  */
 function ds_panels_sections( $wp_customize ) {
+
 	/**
 	 * Add panels
 	 */
@@ -21,49 +24,49 @@ function ds_panels_sections( $wp_customize ) {
  * Global Setting Section
  */
 	$wp_customize->add_section( 'theme', array(
-		'title'       => __( 'Theme', 'ds' ),
-		'priority'    => 20,
+		'title'    => __( 'Theme', 'ds' ),
+		'priority' => 20,
 	) );
 
 	$wp_customize->add_section( 'fonts', array(
-		'title'       => __( 'Fonts', 'ds' ),
-		'priority'    => 25,
+		'title'    => __( 'Fonts', 'ds' ),
+		'priority' => 25,
 	) );
 
-	$wp_customize->add_section( 'settings', array (
-		'title'       => __( 'Global Settings', 'ds' ),
-		'priority'    => 30,
+	$wp_customize->add_section( 'settings', array(
+		'title'    => __( 'Global Settings', 'ds' ),
+		'priority' => 30,
 	) );
 
-	$wp_customize->add_section( 'size', array (
+	$wp_customize->add_section( 'size', array(
 		'title'       => __( 'Size', 'ds' ),
 		'priority'    => 35,
-		'description' => 'The "normal" size of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.'
+		'description' => 'The "normal" size of the presentation, aspect ratio will be preserved when the presentation is scaled to fit different resolutions. Can be specified using percentage units.',
 	) );
 
-	$wp_customize->add_section( 'visual_settings', array (
-		'title'      => __( 'Visual Settings', 'ds' ),
-		'priority'   => 40,
+	$wp_customize->add_section( 'visual_settings', array(
+		'title'    => __( 'Visual Settings', 'ds' ),
+		'priority' => 40,
 	) );
 
 	$wp_customize->add_section( 'navigation', array(
-		'title'      => __( 'Navigation', 'ds' ),
-		'priority'   => 50,
+		'title'    => __( 'Navigation', 'ds' ),
+		'priority' => 50,
 	) );
 
 	$wp_customize->add_section( 'transitions', array(
-		'title'       => __( 'Transitions', 'ds' ),
-		'priority'    => 60,
+		'title'    => __( 'Transitions', 'ds' ),
+		'priority' => 60,
 	) );
 
-	$wp_customize->add_section( 'mobile', array (
-		'title'       => __( 'Mobile', 'ds' ),
-		'priority'    => 80,
+	$wp_customize->add_section( 'mobile', array(
+		'title'    => __( 'Mobile', 'ds' ),
+		'priority' => 80,
 	) );
 
 }
-add_action( 'customize_register', 'ds_panels_sections' );
 
+add_action( 'customize_register', 'ds_panels_sections' );
 
 /**
  * Add our controls.
@@ -174,19 +177,19 @@ function ds_fields( $fields ) {
 		'default'     => 'sky',
 		'priority'    => 10,
 		'choices'     => array(
-				'wc-miami'        => trailingslashit( KIRKI_URL ) . 'assets/images/themes/wc-miami.png',
-				'sky'             => trailingslashit( KIRKI_URL ) . 'assets/images/themes/sky.png',
-				'beige'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/beige.png',
-				'black'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/black.png',
-				'blood'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/blood.png',
-				'league'          => trailingslashit( KIRKI_URL ) . 'assets/images/themes/league.png',
-				'moon'            => trailingslashit( KIRKI_URL ) . 'assets/images/themes/moon.png',
-				'night'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/night.png',
-				'serif'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/serif.png',
-				'simple'          => trailingslashit( KIRKI_URL ) . 'assets/images/themes/simple.png',
-				'solarized'       => trailingslashit( KIRKI_URL ) . 'assets/images/themes/solarized.png',
-				'white'           => trailingslashit( KIRKI_URL ) . 'assets/images/themes/white.png',
-			),
+			'wc-miami'  => trailingslashit( KIRKI_URL ) . 'assets/images/themes/wc-miami.png',
+			'sky'       => trailingslashit( KIRKI_URL ) . 'assets/images/themes/sky.png',
+			'beige'     => trailingslashit( KIRKI_URL ) . 'assets/images/themes/beige.png',
+			'black'     => trailingslashit( KIRKI_URL ) . 'assets/images/themes/black.png',
+			'blood'     => trailingslashit( KIRKI_URL ) . 'assets/images/themes/blood.png',
+			'league'    => trailingslashit( KIRKI_URL ) . 'assets/images/themes/league.png',
+			'moon'      => trailingslashit( KIRKI_URL ) . 'assets/images/themes/moon.png',
+			'night'     => trailingslashit( KIRKI_URL ) . 'assets/images/themes/night.png',
+			'serif'     => trailingslashit( KIRKI_URL ) . 'assets/images/themes/serif.png',
+			'simple'    => trailingslashit( KIRKI_URL ) . 'assets/images/themes/simple.png',
+			'solarized' => trailingslashit( KIRKI_URL ) . 'assets/images/themes/solarized.png',
+			'white'     => trailingslashit( KIRKI_URL ) . 'assets/images/themes/white.png',
+		),
 	);
 
 	$fields[] = array(
@@ -379,12 +382,12 @@ function ds_fields( $fields ) {
 		'default'  => 'slide',
 		'priority' => 10,
 		'choices'  => array(
-			'none'      => trailingslashit( KIRKI_URL ) . 'assets/images/none.png',
-			'fade'      => trailingslashit( KIRKI_URL ) . 'assets/images/fade.png',
-			'slide'     => trailingslashit( KIRKI_URL ) . 'assets/images/slide.png',
-			'convex'    => trailingslashit( KIRKI_URL ) . 'assets/images/convex.png',
-			'concave'   => trailingslashit( KIRKI_URL ) . 'assets/images/concave.png',
-			'zoom'      => trailingslashit( KIRKI_URL ) . 'assets/images/zoom.png',
+			'none'    => trailingslashit( KIRKI_URL ) . 'assets/images/none.png',
+			'fade'    => trailingslashit( KIRKI_URL ) . 'assets/images/fade.png',
+			'slide'   => trailingslashit( KIRKI_URL ) . 'assets/images/slide.png',
+			'convex'  => trailingslashit( KIRKI_URL ) . 'assets/images/convex.png',
+			'concave' => trailingslashit( KIRKI_URL ) . 'assets/images/concave.png',
+			'zoom'    => trailingslashit( KIRKI_URL ) . 'assets/images/zoom.png',
 		),
 	);
 
@@ -412,12 +415,12 @@ function ds_fields( $fields ) {
 		'default'  => 'slide',
 		'priority' => 10,
 		'choices'  => array(
-			'none'      => trailingslashit( KIRKI_URL ) . 'assets/images/none.png',
-			'fade'      => trailingslashit( KIRKI_URL ) . 'assets/images/fade.png',
-			'slide'     => trailingslashit( KIRKI_URL ) . 'assets/images/slide.png',
-			'convex'    => trailingslashit( KIRKI_URL ) . 'assets/images/convex.png',
-			'concave'   => trailingslashit( KIRKI_URL ) . 'assets/images/concave.png',
-			'zoom'      => trailingslashit( KIRKI_URL ) . 'assets/images/zoom.png',
+			'none'    => trailingslashit( KIRKI_URL ) . 'assets/images/none.png',
+			'fade'    => trailingslashit( KIRKI_URL ) . 'assets/images/fade.png',
+			'slide'   => trailingslashit( KIRKI_URL ) . 'assets/images/slide.png',
+			'convex'  => trailingslashit( KIRKI_URL ) . 'assets/images/convex.png',
+			'concave' => trailingslashit( KIRKI_URL ) . 'assets/images/concave.png',
+			'zoom'    => trailingslashit( KIRKI_URL ) . 'assets/images/zoom.png',
 		),
 	);
 
@@ -463,8 +466,10 @@ function ds_fields( $fields ) {
 		'default'     => 1,
 		'priority'    => 30,
 	);
+
 	return $fields;
 }
+
 add_filter( 'kirki/fields', 'ds_fields' );
 
 /**
@@ -473,15 +478,16 @@ add_filter( 'kirki/fields', 'ds_fields' );
 function ds_configuration() {
 
 	$args = array(
-		'logo_image'    => '',
-		'description'   => __( '', 'ds' ),
-		'color_accent'  => '#378ECF',
-		'color_back'    => '#222222',
+		'logo_image'   => '',
+		'description'  => __( '', 'ds' ),
+		'color_accent' => '#378ECF',
+		'color_back'   => '#222222',
 	);
 
 	return $args;
 
 }
+
 add_filter( 'kirki/config', 'ds_configuration' );
 
 /**
@@ -505,4 +511,5 @@ function ds_custom_css() {
 	wp_add_inline_style( 'ds-style', $css );
 
 }
+
 add_action( 'wp_enqueue_scripts', 'ds_custom_css' );

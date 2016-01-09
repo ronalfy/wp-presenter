@@ -19,15 +19,15 @@ blockquote, q {
 
 hr {
 	background-color: $color__background-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+	border:           0;
+	height:           1px;
+	margin-bottom:    1.5em;
 }
 
 @import "lists";
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
+	height:    auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
 

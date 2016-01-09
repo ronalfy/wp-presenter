@@ -1,25 +1,25 @@
 .main-navigation {
 	display: block;
-	float: left;
-	width: 100%;
+	float:   left;
+	width:   100%;
 
 	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
+		display:      none;
+		list-style:   none;
+		margin:       0;
 		padding-left: 0;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
+			float:      left;
+			position:   absolute;
+			top:        1.5em;
+			left:       -999em;
+			z-index:    99999;
 
 			ul {
 				left: -999em;
-				top: 0;
+				top:  0;
 			}
 
 			li {
@@ -48,7 +48,7 @@
 		}
 	}
 	li {
-		float: left;
+		float:    left;
 		position: relative;
 
 		&:hover > a,
@@ -56,7 +56,7 @@
 		}
 	}
 	a {
-		display: block;
+		display:         block;
 		text-decoration: none;
 	}
 
@@ -86,7 +86,7 @@
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin:   0 0 1.5em;
 		overflow: hidden;
 	}
 
@@ -96,8 +96,8 @@
 	}
 
 	& .nav-next {
-		float: right;
+		float:      right;
 		text-align: right;
-		width: 50%;
+		width:      50%;
 	}
 }

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Presenter 0.7.2 Beta\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-01-09 01:07:55+00:00\n"
+"POT-Creation-Date: 2016-01-09 01:18:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,23 +13,23 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.3\n"
 
-#: inc/customizer.php:434
+#: inc/customizer.php:437
 msgid "1"
 msgstr ""
 
-#: inc/customizer.php:435
+#: inc/customizer.php:438
 msgid "2"
 msgstr ""
 
-#: inc/customizer.php:436
+#: inc/customizer.php:439
 msgid "3"
 msgstr ""
 
-#: inc/customizer.php:437
+#: inc/customizer.php:440
 msgid "4"
 msgstr ""
 
-#: inc/customizer.php:438
+#: inc/customizer.php:441
 msgid "5"
 msgstr ""
 
@@ -1116,7 +1116,7 @@ msgstr ""
 msgid "uploaded to this post"
 msgstr ""
 
-#: inc/acf/core/fields/file.php:113 inc/customizer.php:39
+#: inc/acf/core/fields/file.php:113 inc/customizer.php:42
 msgid "Size"
 msgstr ""
 
@@ -1193,7 +1193,7 @@ msgstr ""
 msgid "Set the initial zoom level"
 msgstr ""
 
-#: inc/acf/core/fields/google-map.php:217 inc/customizer.php:124
+#: inc/acf/core/fields/google-map.php:217 inc/customizer.php:127
 msgid "Height"
 msgstr ""
 
@@ -2058,255 +2058,255 @@ msgstr ""
 msgid "Vietnamese"
 msgstr ""
 
-#: inc/customizer.php:24 inc/customizer.php:170
+#: inc/customizer.php:27 inc/customizer.php:173
 msgid "Theme"
 msgstr ""
 
-#: inc/customizer.php:29
+#: inc/customizer.php:32
 msgid "Fonts"
 msgstr ""
 
-#: inc/customizer.php:34
+#: inc/customizer.php:37
 msgid "Global Settings"
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:48
 msgid "Visual Settings"
 msgstr ""
 
-#: inc/customizer.php:50
+#: inc/customizer.php:53
 msgid "Navigation"
 msgstr ""
 
-#: inc/customizer.php:55
+#: inc/customizer.php:58
 msgid "Transitions"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:63
 msgid "Mobile"
 msgstr ""
 
-#: inc/customizer.php:78
+#: inc/customizer.php:81
 msgid "Loop Presentation"
 msgstr ""
 
-#: inc/customizer.php:80
+#: inc/customizer.php:83
 msgid "Make the first slide loop back to the first."
 msgstr ""
 
-#: inc/customizer.php:89
+#: inc/customizer.php:92
 msgid "Right-to-left"
 msgstr ""
 
-#: inc/customizer.php:91
+#: inc/customizer.php:94
 msgid "Make content flow right to left."
 msgstr ""
 
-#: inc/customizer.php:100
+#: inc/customizer.php:103
 msgid "Push History"
 msgstr ""
 
-#: inc/customizer.php:102
+#: inc/customizer.php:105
 msgid "Push each slide change to the browser history."
 msgstr ""
 
-#: inc/customizer.php:113
+#: inc/customizer.php:116
 msgid "Width"
 msgstr ""
 
-#: inc/customizer.php:135
+#: inc/customizer.php:138
 msgid "Margin"
 msgstr ""
 
-#: inc/customizer.php:137
+#: inc/customizer.php:140
 msgid "Factor of the display size that should remain empty around the content"
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:149
 msgid "MinScale"
 msgstr ""
 
-#: inc/customizer.php:148
+#: inc/customizer.php:151
 msgid "Bounds for smallest possible scale to apply to content"
 msgstr ""
 
-#: inc/customizer.php:157
+#: inc/customizer.php:160
 msgid "MaxScale"
 msgstr ""
 
-#: inc/customizer.php:159
+#: inc/customizer.php:162
 msgid "Bounds for largest possible scale to apply to content"
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer.php:175
 msgid "The colors for the theme of your slideshow."
 msgstr ""
 
-#: inc/customizer.php:195
+#: inc/customizer.php:198
 msgid "Header Typography"
 msgstr ""
 
-#: inc/customizer.php:196
+#: inc/customizer.php:199
 msgid "Select the font to use for the Headings in your slideshow."
 msgstr ""
 
-#: inc/customizer.php:197 inc/customizer.php:224
+#: inc/customizer.php:200 inc/customizer.php:227
 msgid ""
 "All fonts have been embedded using @font-face so that you don't have to "
 "worry about connection issues."
 msgstr ""
 
-#: inc/customizer.php:222
+#: inc/customizer.php:225
 msgid "All Other Typography"
 msgstr ""
 
-#: inc/customizer.php:223
+#: inc/customizer.php:226
 msgid "Select the font to use in all other areas of your slideshow."
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:254
 msgid "Progress Bar"
 msgstr ""
 
-#: inc/customizer.php:253
+#: inc/customizer.php:256
 msgid "Display a presentation progress bar"
 msgstr ""
 
-#: inc/customizer.php:262
+#: inc/customizer.php:265
 msgid "Slide Number"
 msgstr ""
 
-#: inc/customizer.php:264
+#: inc/customizer.php:267
 msgid "Display the page number of the current slide."
 msgstr ""
 
-#: inc/customizer.php:273
+#: inc/customizer.php:276
 msgid "Slideshow Overview"
 msgstr ""
 
-#: inc/customizer.php:275
+#: inc/customizer.php:278
 msgid "Enable the slide overview mode"
 msgstr ""
 
-#: inc/customizer.php:284
+#: inc/customizer.php:287
 msgid "Center Slides Vertically"
 msgstr ""
 
-#: inc/customizer.php:286
+#: inc/customizer.php:289
 msgid "Vertical centering of slides."
 msgstr ""
 
-#: inc/customizer.php:295
+#: inc/customizer.php:298
 msgid "Fragments"
 msgstr ""
 
-#: inc/customizer.php:297
+#: inc/customizer.php:300
 msgid "Turns fragments on and off globally."
 msgstr ""
 
-#: inc/customizer.php:306
+#: inc/customizer.php:309
 msgid "Embedded Mode"
 msgstr ""
 
-#: inc/customizer.php:308
+#: inc/customizer.php:311
 msgid ""
 "Flags if the presentation is running in an embedded mode, i.e. contained "
 "within a limited portion of the screen"
 msgstr ""
 
-#: inc/customizer.php:317
+#: inc/customizer.php:320
 msgid "Help"
 msgstr ""
 
-#: inc/customizer.php:319
+#: inc/customizer.php:322
 msgid "Flags if we should show a help overlay when the questionmark key is pressed"
 msgstr ""
 
-#: inc/customizer.php:328
+#: inc/customizer.php:331
 msgid "Preview Links"
 msgstr ""
 
-#: inc/customizer.php:330
+#: inc/customizer.php:333
 msgid "Opens links in an iframe preview overlay."
 msgstr ""
 
-#: inc/customizer.php:341
+#: inc/customizer.php:344
 msgid "Display Controls?"
 msgstr ""
 
-#: inc/customizer.php:343
+#: inc/customizer.php:346
 msgid "Display controls in the bottom right corner"
 msgstr ""
 
-#: inc/customizer.php:352
+#: inc/customizer.php:355
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: inc/customizer.php:354
+#: inc/customizer.php:357
 msgid "Enable keyboard shortcuts for navigation"
 msgstr ""
 
-#: inc/customizer.php:363
+#: inc/customizer.php:366
 msgid "Mouse Wheel Navigation"
 msgstr ""
 
-#: inc/customizer.php:365
+#: inc/customizer.php:368
 msgid "Enable slide navigation via mouse wheel."
 msgstr ""
 
-#: inc/customizer.php:376
+#: inc/customizer.php:379
 msgid "Transition Style"
 msgstr ""
 
-#: inc/customizer.php:377
+#: inc/customizer.php:380
 msgid ""
 "1: none, &nbsp;2: fade, &nbsp;3: slide, &nbsp;4: convex, &nbsp;5: concave, "
 "&nbsp;6: zoom"
 msgstr ""
 
-#: inc/customizer.php:394
+#: inc/customizer.php:397
 msgid "Transition Speed"
 msgstr ""
 
-#: inc/customizer.php:401
+#: inc/customizer.php:404
 msgid "Fast"
 msgstr ""
 
-#: inc/customizer.php:402
+#: inc/customizer.php:405
 msgid "Slow"
 msgstr ""
 
-#: inc/customizer.php:409
+#: inc/customizer.php:412
 msgid "Background Transition"
 msgstr ""
 
-#: inc/customizer.php:410
+#: inc/customizer.php:413
 msgid ""
 "Background transitions apply when navigating to or from a slide that has a "
 "background image or color."
 msgstr ""
 
-#: inc/customizer.php:427
+#: inc/customizer.php:430
 msgid "View Distance"
 msgstr ""
 
-#: inc/customizer.php:429
+#: inc/customizer.php:432
 msgid "Number of slides away from the current slide that are visible."
 msgstr ""
 
-#: inc/customizer.php:448
+#: inc/customizer.php:451
 msgid "Enable Touch Navigation"
 msgstr ""
 
-#: inc/customizer.php:450
+#: inc/customizer.php:453
 msgid "Enables touch navigation on devices with touch input."
 msgstr ""
 
-#: inc/customizer.php:459
+#: inc/customizer.php:462
 msgid "Hide Address Bar"
 msgstr ""
 
-#: inc/customizer.php:461
+#: inc/customizer.php:464
 msgid "Hides the address bar on mobile devices."
 msgstr ""
 
