@@ -22,12 +22,6 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/js/better-yourls.min.js' : [
-							'assets/js/better-yourls.js'
-						],
-						'assets/js/admin-footer.min.js' :  [
-							'assets/js/admin-footer.js'
-						]
 					}
 				}
 			},
@@ -45,7 +39,7 @@ module.exports = function ( grunt ) {
 				files : {
 					expand :  true,
 					flatten : true,
-					src :     ['assets/css/better-yourls.css'],
+					src :     ['assets/css/wp-presenter.css'],
 					dest :    'assets/css'
 				}
 			},
@@ -60,7 +54,7 @@ module.exports = function ( grunt ) {
 					files : [{
 						expand : true,
 						cwd :    'assets/css',
-						src :    ['better-yourls.css'],
+						src :    ['wp-presenter.css'],
 						dest :   'assets/css',
 						ext :    '.min.css'
 					}]
@@ -82,7 +76,7 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/css/better-yourls.css' : 'assets/css/better-yourls.scss'
+						'assets/css/wp-presenter.css' : 'assets/css/sass/wp-presenter.scss'
 					}
 				}
 			},
