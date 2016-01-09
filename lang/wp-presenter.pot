@@ -1,10 +1,10 @@
-# Copyright (C) 2016 Trisha Salas
+# Copyright (C) 2016 Chris Wiegman
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Presenter 0.7.2 Beta\n"
+"Project-Id-Version: WP Presenter 0.7.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-01-09 01:18:34+00:00\n"
+"POT-Creation-Date: 2016-01-09 01:33:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2310,11 +2310,11 @@ msgstr ""
 msgid "Hides the address bar on mobile devices."
 msgstr ""
 
-#: inc/dashboard-widgets.php:28
+#: inc/dashboard-widgets.php:30
 msgid "Welcome to WP Presenter!"
 msgstr ""
 
-#: inc/dashboard-widgets.php:49
+#: inc/dashboard-widgets.php:52
 msgid "Based on Reveal.js"
 msgstr ""
 
@@ -2323,7 +2323,7 @@ msgid "WP Presenter"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://serverpress.com/wp-presenter/"
+msgid "https://github.com/ChrisWiegman/wp-presenter"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -2335,7 +2335,7 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Trisha Salas"
+msgid "Chris Wiegman"
 msgstr ""
 
 #. Author URI of the plugin/theme
