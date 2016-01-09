@@ -94,9 +94,8 @@ module.exports = function ( grunt ) {
 
 				target : {
 					options : {
-						type :       'wp-plugin',
-						domainPath : '/lang',
-						mainFile :   'better-yourls.php'
+						type :       'wp-theme',
+						domainPath : '/lang'
 					}
 				}
 			},
