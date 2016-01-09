@@ -1,0 +1,23 @@
+{
+	"name":            "WP-Presenter",
+	"private":         true,
+	"version":         "1.0.0",
+	"description":     "Grunt base for the WP Presenter Theme.",
+	"dependencies":    {},
+	"devDependencies": {
+		"grunt":                "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-contrib-watch":  "*",
+		"grunt-sass":           "*",
+		"grunt-contrib-cssmin": "*",
+		"load-grunt-tasks":     "*",
+		"grunt-autoprefixer":   "*",
+		"grunt-wp-i18n":        "*",
+		"grunt-phpunit":        "*"
+	},
+	"author":          "Chris Wiegman",
+	"repository":      {
+		"type": "git",
+		"url":  "https://github.com/ChrisWiegman/wp-presenter"
+	}
+}
