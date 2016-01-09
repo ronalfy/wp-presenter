@@ -26,7 +26,7 @@ function wp_presenter_scripts() {
 	wp_enqueue_script( 'wp-presenter-core-js', get_template_directory_uri(). '/assets/reveal/js/reveal.js', array(), '', true );
 	wp_enqueue_script( 'wp-presenter-print-pdf', get_template_directory_uri(). '/assets/reveal/plugin/print-pdf/print-pdf.js', array(1.0), '', false );
 	wp_enqueue_script( 'html5shiv', '//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.js', array(), '3.7.2', false );
-	wp_enqueue_style( 'wp-presenter-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'wp-presenter-style', get_template_directory_uri() . '/assets/css/wp-presenter.min.css' );
 	wp_enqueue_style( 'wp-presenter-core', get_template_directory_uri() . '/assets/reveal/css/reveal.css' );
 	wp_enqueue_style( 'wp-presenter-monokai', get_template_directory_uri() . '/assets/reveal/lib/css/monokai.css' );
 	//wp_enqueue_style( 'wp-presenter-pdf-styles', get_template_directory_uri() . '/assets/reveal/css/print/pdf.css' );
