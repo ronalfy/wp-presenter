@@ -1,6 +1,4 @@
-![Travis build status](https://travis-ci.org/trishasalas/wp-presenter.svg?branch=master)
-
-WP Presenter Theme
+WP Presenter Theme [![Build Status](https://travis-ci.org/ChrisWiegman/wp-presenter.svg)](https://travis-ci.org/ChrisWiegman/wp-presenter)
 ====================
 
 A WordPress theme based on reveal.js.
